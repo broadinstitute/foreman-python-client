@@ -1,4 +1,4 @@
-# foreman.SimpleContentAccessApi
+# pyforeman.SimpleContentAccessApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -15,44 +15,32 @@ Method | HTTP request | Description
 
 Check if the specified organization is eligible for Simple Content Access. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SimpleContentAccessApi()
+organization_id = 8.14 # float |
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SimpleContentAccessApi(api_client)
-    organization_id = 3.4 # float | 
-
-    try:
-        # Check if the specified organization is eligible for Simple Content Access. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
-        api_instance.get_organizations_organization_id_simple_content_access_eligible(organization_id)
-    except Exception as e:
-        print("Exception when calling SimpleContentAccessApi->get_organizations_organization_id_simple_content_access_eligible: %s\n" % e)
+try:
+    # Check if the specified organization is eligible for Simple Content Access. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
+    api_instance.get_organizations_organization_id_simple_content_access_eligible(organization_id)
+except ApiException as e:
+    print("Exception when calling SimpleContentAccessApi->get_organizations_organization_id_simple_content_access_eligible: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **float**|  | 
+ **organization_id** | **float**|  |
 
 ### Return type
 
@@ -64,14 +52,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -80,44 +62,32 @@ No authorization required
 
 Check if the specified organization has Simple Content Access enabled. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SimpleContentAccessApi()
+organization_id = 8.14 # float | Organization ID
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SimpleContentAccessApi(api_client)
-    organization_id = 3.4 # float | Organization ID
-
-    try:
-        # Check if the specified organization has Simple Content Access enabled. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
-        api_instance.get_organizations_organization_id_simple_content_access_status(organization_id)
-    except Exception as e:
-        print("Exception when calling SimpleContentAccessApi->get_organizations_organization_id_simple_content_access_status: %s\n" % e)
+try:
+    # Check if the specified organization has Simple Content Access enabled. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
+    api_instance.get_organizations_organization_id_simple_content_access_status(organization_id)
+except ApiException as e:
+    print("Exception when calling SimpleContentAccessApi->get_organizations_organization_id_simple_content_access_status: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **float**| Organization ID | 
+ **organization_id** | **float**| Organization ID |
 
 ### Return type
 
@@ -129,14 +99,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -145,44 +109,32 @@ No authorization required
 
 Disable simple content access for a manifest. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SimpleContentAccessApi()
+organization_id = 8.14 # float | Organization ID
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SimpleContentAccessApi(api_client)
-    organization_id = 3.4 # float | Organization ID
-
-    try:
-        # Disable simple content access for a manifest. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
-        api_instance.put_organizations_organization_id_simple_content_access_disable(organization_id)
-    except Exception as e:
-        print("Exception when calling SimpleContentAccessApi->put_organizations_organization_id_simple_content_access_disable: %s\n" % e)
+try:
+    # Disable simple content access for a manifest. WARNING: Simple Content Access will be required for all organizations in Katello 4.12.
+    api_instance.put_organizations_organization_id_simple_content_access_disable(organization_id)
+except ApiException as e:
+    print("Exception when calling SimpleContentAccessApi->put_organizations_organization_id_simple_content_access_disable: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **float**| Organization ID | 
+ **organization_id** | **float**| Organization ID |
 
 ### Return type
 
@@ -194,14 +146,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -210,44 +156,32 @@ No authorization required
 
 Enable simple content access for a manifest
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SimpleContentAccessApi()
+organization_id = 8.14 # float | Organization ID
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SimpleContentAccessApi(api_client)
-    organization_id = 3.4 # float | Organization ID
-
-    try:
-        # Enable simple content access for a manifest
-        api_instance.put_organizations_organization_id_simple_content_access_enable(organization_id)
-    except Exception as e:
-        print("Exception when calling SimpleContentAccessApi->put_organizations_organization_id_simple_content_access_enable: %s\n" % e)
+try:
+    # Enable simple content access for a manifest
+    api_instance.put_organizations_organization_id_simple_content_access_enable(organization_id)
+except ApiException as e:
+    print("Exception when calling SimpleContentAccessApi->put_organizations_organization_id_simple_content_access_enable: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **float**| Organization ID | 
+ **organization_id** | **float**| Organization ID |
 
 ### Return type
 
@@ -259,14 +193,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

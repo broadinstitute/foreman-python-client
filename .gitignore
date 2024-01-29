@@ -45,9 +45,7 @@ coverage.xml
 *,cover
 .hypothesis/
 venv/
-.venv/
 .python-version
-.pytest_cache
 
 # Translations
 *.mo
@@ -64,5 +62,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+# Ignore virtualenv directory
+.venv/
 
-.openapi-generator/*
+# Ignore build files in autogen
+autogen/foreman/*
+autogen/foreman.tar.gz

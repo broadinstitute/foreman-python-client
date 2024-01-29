@@ -1,4 +1,4 @@
-# foreman.PluginsApi
+# pyforeman.PluginsApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -12,46 +12,34 @@ Method | HTTP request | Description
 
 List installed plugins
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.PluginsApi()
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.PluginsApi(api_client)
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List installed plugins
-        api_instance.get_plugins(location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling PluginsApi->get_plugins: %s\n" % e)
+try:
+    # List installed plugins
+    api_instance.get_plugins(location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling PluginsApi->get_plugins: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -63,14 +51,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

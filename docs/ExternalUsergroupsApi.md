@@ -1,4 +1,4 @@
-# foreman.ExternalUsergroupsApi
+# pyforeman.ExternalUsergroupsApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -19,50 +19,38 @@ Method | HTTP request | Description
 
 Delete an external user group
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ExternalUsergroupsApi()
+usergroup_id = 'usergroup_id_example' # str | ID or name of user group
+id = 'id_example' # str | ID or name external user group
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ExternalUsergroupsApi(api_client)
-    usergroup_id = 'usergroup_id_example' # str | ID or name of user group
-    id = 'id_example' # str | ID or name external user group
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Delete an external user group
-        api_instance.delete_usergroups_usergroup_id_external_usergroups_id(usergroup_id, id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ExternalUsergroupsApi->delete_usergroups_usergroup_id_external_usergroups_id: %s\n" % e)
+try:
+    # Delete an external user group
+    api_instance.delete_usergroups_usergroup_id_external_usergroups_id(usergroup_id, id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ExternalUsergroupsApi->delete_usergroups_usergroup_id_external_usergroups_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usergroup_id** | **str**| ID or name of user group | 
- **id** | **str**| ID or name external user group | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **usergroup_id** | **str**| ID or name of user group |
+ **id** | **str**| ID or name external user group |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -76,12 +64,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -90,50 +72,38 @@ No authorization required
 
 List all external user groups for LDAP authentication source
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ExternalUsergroupsApi()
+auth_source_ldap_id = 8.14 # float |
+usergroup_id = 'usergroup_id_example' # str | ID or name of user group
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ExternalUsergroupsApi(api_client)
-    auth_source_ldap_id = 3.4 # float | 
-    usergroup_id = 'usergroup_id_example' # str | ID or name of user group
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List all external user groups for LDAP authentication source
-        api_instance.get_auth_source_ldaps_auth_source_ldap_id_external_usergroups(auth_source_ldap_id, usergroup_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ExternalUsergroupsApi->get_auth_source_ldaps_auth_source_ldap_id_external_usergroups: %s\n" % e)
+try:
+    # List all external user groups for LDAP authentication source
+    api_instance.get_auth_source_ldaps_auth_source_ldap_id_external_usergroups(auth_source_ldap_id, usergroup_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ExternalUsergroupsApi->get_auth_source_ldaps_auth_source_ldap_id_external_usergroups: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auth_source_ldap_id** | **float**|  | 
- **usergroup_id** | **str**| ID or name of user group | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **auth_source_ldap_id** | **float**|  |
+ **usergroup_id** | **str**| ID or name of user group |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -145,14 +115,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -161,52 +125,40 @@ No authorization required
 
 Show an external user group for LDAP authentication source
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ExternalUsergroupsApi()
+id = 'id_example' # str | ID or name of external user group
+auth_source_ldap_id = 8.14 # float |
+usergroup_id = 'usergroup_id_example' # str | ID or name of user group
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ExternalUsergroupsApi(api_client)
-    id = 'id_example' # str | ID or name of external user group
-    auth_source_ldap_id = 3.4 # float | 
-    usergroup_id = 'usergroup_id_example' # str | ID or name of user group
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Show an external user group for LDAP authentication source
-        api_instance.get_auth_source_ldaps_auth_source_ldap_id_external_usergroups_id(id, auth_source_ldap_id, usergroup_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ExternalUsergroupsApi->get_auth_source_ldaps_auth_source_ldap_id_external_usergroups_id: %s\n" % e)
+try:
+    # Show an external user group for LDAP authentication source
+    api_instance.get_auth_source_ldaps_auth_source_ldap_id_external_usergroups_id(id, auth_source_ldap_id, usergroup_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ExternalUsergroupsApi->get_auth_source_ldaps_auth_source_ldap_id_external_usergroups_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| ID or name of external user group | 
- **auth_source_ldap_id** | **float**|  | 
- **usergroup_id** | **str**| ID or name of user group | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**| ID or name of external user group |
+ **auth_source_ldap_id** | **float**|  |
+ **usergroup_id** | **str**| ID or name of user group |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -218,14 +170,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -234,48 +180,36 @@ No authorization required
 
 List all external user groups for user group
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ExternalUsergroupsApi()
+usergroup_id = 'usergroup_id_example' # str | ID or name of user group
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ExternalUsergroupsApi(api_client)
-    usergroup_id = 'usergroup_id_example' # str | ID or name of user group
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List all external user groups for user group
-        api_instance.get_usergroups_usergroup_id_external_usergroups(usergroup_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ExternalUsergroupsApi->get_usergroups_usergroup_id_external_usergroups: %s\n" % e)
+try:
+    # List all external user groups for user group
+    api_instance.get_usergroups_usergroup_id_external_usergroups(usergroup_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ExternalUsergroupsApi->get_usergroups_usergroup_id_external_usergroups: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usergroup_id** | **str**| ID or name of user group | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **usergroup_id** | **str**| ID or name of user group |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -287,14 +221,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -303,50 +231,38 @@ No authorization required
 
 Show an external user group for user group
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ExternalUsergroupsApi()
+usergroup_id = 'usergroup_id_example' # str | ID or name of user group
+id = 'id_example' # str | ID or name of external user group
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ExternalUsergroupsApi(api_client)
-    usergroup_id = 'usergroup_id_example' # str | ID or name of user group
-    id = 'id_example' # str | ID or name of external user group
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Show an external user group for user group
-        api_instance.get_usergroups_usergroup_id_external_usergroups_id(usergroup_id, id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ExternalUsergroupsApi->get_usergroups_usergroup_id_external_usergroups_id: %s\n" % e)
+try:
+    # Show an external user group for user group
+    api_instance.get_usergroups_usergroup_id_external_usergroups_id(usergroup_id, id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ExternalUsergroupsApi->get_usergroups_usergroup_id_external_usergroups_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usergroup_id** | **str**| ID or name of user group | 
- **id** | **str**| ID or name of external user group | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **usergroup_id** | **str**| ID or name of user group |
+ **id** | **str**| ID or name of external user group |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -358,14 +274,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -374,52 +284,40 @@ No authorization required
 
 Create an external user group linked to a user group
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ExternalUsergroupsApi()
+usergroup_id = 'usergroup_id_example' # str | ID or name of user group
+external_usergroup_name = 'external_usergroup_name_example' # str | External user group name
+external_usergroup_auth_source_id = 8.14 # float | ID of linked authentication source
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ExternalUsergroupsApi(api_client)
-    usergroup_id = 'usergroup_id_example' # str | ID or name of user group
-    external_usergroup_name = 'external_usergroup_name_example' # str | External user group name
-    external_usergroup_auth_source_id = 3.4 # float | ID of linked authentication source
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Create an external user group linked to a user group
-        api_instance.post_usergroups_usergroup_id_external_usergroups(usergroup_id, external_usergroup_name, external_usergroup_auth_source_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ExternalUsergroupsApi->post_usergroups_usergroup_id_external_usergroups: %s\n" % e)
+try:
+    # Create an external user group linked to a user group
+    api_instance.post_usergroups_usergroup_id_external_usergroups(usergroup_id, external_usergroup_name, external_usergroup_auth_source_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ExternalUsergroupsApi->post_usergroups_usergroup_id_external_usergroups: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usergroup_id** | **str**| ID or name of user group | 
- **external_usergroup_name** | **str**| External user group name | 
- **external_usergroup_auth_source_id** | **float**| ID of linked authentication source | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **usergroup_id** | **str**| ID or name of user group |
+ **external_usergroup_name** | **str**| External user group name |
+ **external_usergroup_auth_source_id** | **float**| ID of linked authentication source |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -433,12 +331,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -447,54 +339,42 @@ No authorization required
 
 Update external user group
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ExternalUsergroupsApi()
+usergroup_id = 'usergroup_id_example' # str | ID or name of user group
+id = 'id_example' # str | ID or name of external user group
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+external_usergroup_name = 'external_usergroup_name_example' # str | External user group name (optional)
+external_usergroup_auth_source_id = 8.14 # float | ID of linked authentication source (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ExternalUsergroupsApi(api_client)
-    usergroup_id = 'usergroup_id_example' # str | ID or name of user group
-    id = 'id_example' # str | ID or name of external user group
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    external_usergroup_name = 'external_usergroup_name_example' # str | External user group name (optional)
-    external_usergroup_auth_source_id = 3.4 # float | ID of linked authentication source (optional)
-
-    try:
-        # Update external user group
-        api_instance.put_usergroups_usergroup_id_external_usergroups_id(usergroup_id, id, location_id=location_id, organization_id=organization_id, external_usergroup_name=external_usergroup_name, external_usergroup_auth_source_id=external_usergroup_auth_source_id)
-    except Exception as e:
-        print("Exception when calling ExternalUsergroupsApi->put_usergroups_usergroup_id_external_usergroups_id: %s\n" % e)
+try:
+    # Update external user group
+    api_instance.put_usergroups_usergroup_id_external_usergroups_id(usergroup_id, id, location_id=location_id, organization_id=organization_id, external_usergroup_name=external_usergroup_name, external_usergroup_auth_source_id=external_usergroup_auth_source_id)
+except ApiException as e:
+    print("Exception when calling ExternalUsergroupsApi->put_usergroups_usergroup_id_external_usergroups_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usergroup_id** | **str**| ID or name of user group | 
- **id** | **str**| ID or name of external user group | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **external_usergroup_name** | **str**| External user group name | [optional] 
- **external_usergroup_auth_source_id** | **float**| ID of linked authentication source | [optional] 
+ **usergroup_id** | **str**| ID or name of user group |
+ **id** | **str**| ID or name of external user group |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **external_usergroup_name** | **str**| External user group name | [optional]
+ **external_usergroup_auth_source_id** | **float**| ID of linked authentication source | [optional]
 
 ### Return type
 
@@ -508,12 +388,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -522,50 +396,38 @@ No authorization required
 
 Refresh external user group
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ExternalUsergroupsApi()
+usergroup_id = 'usergroup_id_example' # str | ID or name of user group
+id = 'id_example' # str | ID or name of external user group
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ExternalUsergroupsApi(api_client)
-    usergroup_id = 'usergroup_id_example' # str | ID or name of user group
-    id = 'id_example' # str | ID or name of external user group
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Refresh external user group
-        api_instance.put_usergroups_usergroup_id_external_usergroups_id_refresh(usergroup_id, id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ExternalUsergroupsApi->put_usergroups_usergroup_id_external_usergroups_id_refresh: %s\n" % e)
+try:
+    # Refresh external user group
+    api_instance.put_usergroups_usergroup_id_external_usergroups_id_refresh(usergroup_id, id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ExternalUsergroupsApi->put_usergroups_usergroup_id_external_usergroups_id_refresh: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usergroup_id** | **str**| ID or name of user group | 
- **id** | **str**| ID or name of external user group | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **usergroup_id** | **str**| ID or name of user group |
+ **id** | **str**| ID or name of external user group |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -580,11 +442,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

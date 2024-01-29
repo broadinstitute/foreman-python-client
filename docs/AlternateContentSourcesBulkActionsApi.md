@@ -1,4 +1,4 @@
-# foreman.AlternateContentSourcesBulkActionsApi
+# pyforeman.AlternateContentSourcesBulkActionsApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -14,44 +14,32 @@ Method | HTTP request | Description
 
 Refresh alternate content sources
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.AlternateContentSourcesBulkActionsApi()
+ids = ['ids_example'] # list[str] | List of alternate content source IDs
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.AlternateContentSourcesBulkActionsApi(api_client)
-    ids = ['ids_example'] # List[str] | List of alternate content source IDs
-
-    try:
-        # Refresh alternate content sources
-        api_instance.post_alternate_content_sources_bulk_refresh(ids)
-    except Exception as e:
-        print("Exception when calling AlternateContentSourcesBulkActionsApi->post_alternate_content_sources_bulk_refresh: %s\n" % e)
+try:
+    # Refresh alternate content sources
+    api_instance.post_alternate_content_sources_bulk_refresh(ids)
+except ApiException as e:
+    print("Exception when calling AlternateContentSourcesBulkActionsApi->post_alternate_content_sources_bulk_refresh: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**List[str]**](str.md)| List of alternate content source IDs | 
+ **ids** | [**list[str]**](str.md)| List of alternate content source IDs |
 
 ### Return type
 
@@ -66,12 +54,6 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_alternate_content_sources_bulk_refresh_all**
@@ -79,39 +61,27 @@ No authorization required
 
 Refresh all alternate content sources
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.AlternateContentSourcesBulkActionsApi()
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.AlternateContentSourcesBulkActionsApi(api_client)
-
-    try:
-        # Refresh all alternate content sources
-        api_instance.post_alternate_content_sources_bulk_refresh_all()
-    except Exception as e:
-        print("Exception when calling AlternateContentSourcesBulkActionsApi->post_alternate_content_sources_bulk_refresh_all: %s\n" % e)
+try:
+    # Refresh all alternate content sources
+    api_instance.post_alternate_content_sources_bulk_refresh_all()
+except ApiException as e:
+    print("Exception when calling AlternateContentSourcesBulkActionsApi->post_alternate_content_sources_bulk_refresh_all: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -124,14 +94,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -140,44 +104,32 @@ No authorization required
 
 Destroy one or more alternate content sources
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.AlternateContentSourcesBulkActionsApi()
+ids = ['ids_example'] # list[str] | List of alternate content source IDs
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.AlternateContentSourcesBulkActionsApi(api_client)
-    ids = ['ids_example'] # List[str] | List of alternate content source IDs
-
-    try:
-        # Destroy one or more alternate content sources
-        api_instance.put_alternate_content_sources_bulk_destroy(ids)
-    except Exception as e:
-        print("Exception when calling AlternateContentSourcesBulkActionsApi->put_alternate_content_sources_bulk_destroy: %s\n" % e)
+try:
+    # Destroy one or more alternate content sources
+    api_instance.put_alternate_content_sources_bulk_destroy(ids)
+except ApiException as e:
+    print("Exception when calling AlternateContentSourcesBulkActionsApi->put_alternate_content_sources_bulk_destroy: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**List[str]**](str.md)| List of alternate content source IDs | 
+ **ids** | [**list[str]**](str.md)| List of alternate content source IDs |
 
 ### Return type
 
@@ -192,11 +144,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

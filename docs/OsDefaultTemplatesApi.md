@@ -1,4 +1,4 @@
-# foreman.OsDefaultTemplatesApi
+# pyforeman.OsDefaultTemplatesApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -17,50 +17,38 @@ Method | HTTP request | Description
 
 Delete a default template combination for an operating system
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.OsDefaultTemplatesApi()
+operatingsystem_id = 8.14 # float | ID of operating system
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.OsDefaultTemplatesApi(api_client)
-    operatingsystem_id = 3.4 # float | ID of operating system
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Delete a default template combination for an operating system
-        api_instance.delete_operatingsystems_operatingsystem_id_os_default_templates_id(operatingsystem_id, id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling OsDefaultTemplatesApi->delete_operatingsystems_operatingsystem_id_os_default_templates_id: %s\n" % e)
+try:
+    # Delete a default template combination for an operating system
+    api_instance.delete_operatingsystems_operatingsystem_id_os_default_templates_id(operatingsystem_id, id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling OsDefaultTemplatesApi->delete_operatingsystems_operatingsystem_id_os_default_templates_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **operatingsystem_id** | **float**| ID of operating system | 
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **operatingsystem_id** | **float**| ID of operating system |
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -74,12 +62,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -88,54 +70,42 @@ No authorization required
 
 List default templates combinations for an operating system
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.OsDefaultTemplatesApi()
+operatingsystem_id = 8.14 # float | ID of operating system
+provisioning_template_id = 'provisioning_template_id_example' # str | ID of provisioning template
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+page = 8.14 # float | Page number, starting at 1 (optional)
+per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.OsDefaultTemplatesApi(api_client)
-    operatingsystem_id = 3.4 # float | ID of operating system
-    provisioning_template_id = 'provisioning_template_id_example' # str | ID of provisioning template
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    page = 3.4 # float | Page number, starting at 1 (optional)
-    per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
-
-    try:
-        # List default templates combinations for an operating system
-        api_instance.get_operatingsystems_operatingsystem_id_os_default_templates(operatingsystem_id, provisioning_template_id, location_id=location_id, organization_id=organization_id, page=page, per_page=per_page)
-    except Exception as e:
-        print("Exception when calling OsDefaultTemplatesApi->get_operatingsystems_operatingsystem_id_os_default_templates: %s\n" % e)
+try:
+    # List default templates combinations for an operating system
+    api_instance.get_operatingsystems_operatingsystem_id_os_default_templates(operatingsystem_id, provisioning_template_id, location_id=location_id, organization_id=organization_id, page=page, per_page=per_page)
+except ApiException as e:
+    print("Exception when calling OsDefaultTemplatesApi->get_operatingsystems_operatingsystem_id_os_default_templates: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **operatingsystem_id** | **float**| ID of operating system | 
- **provisioning_template_id** | **str**| ID of provisioning template | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **page** | **float**| Page number, starting at 1 | [optional] 
- **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional] 
+ **operatingsystem_id** | **float**| ID of operating system |
+ **provisioning_template_id** | **str**| ID of provisioning template |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **page** | **float**| Page number, starting at 1 | [optional]
+ **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional]
 
 ### Return type
 
@@ -147,14 +117,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -163,50 +127,38 @@ No authorization required
 
 Show a default template combination for an operating system
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.OsDefaultTemplatesApi()
+operatingsystem_id = 8.14 # float | ID of operating system
+id = 8.14 # float |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.OsDefaultTemplatesApi(api_client)
-    operatingsystem_id = 3.4 # float | ID of operating system
-    id = 3.4 # float | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Show a default template combination for an operating system
-        api_instance.get_operatingsystems_operatingsystem_id_os_default_templates_id(operatingsystem_id, id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling OsDefaultTemplatesApi->get_operatingsystems_operatingsystem_id_os_default_templates_id: %s\n" % e)
+try:
+    # Show a default template combination for an operating system
+    api_instance.get_operatingsystems_operatingsystem_id_os_default_templates_id(operatingsystem_id, id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling OsDefaultTemplatesApi->get_operatingsystems_operatingsystem_id_os_default_templates_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **operatingsystem_id** | **float**| ID of operating system | 
- **id** | **float**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **operatingsystem_id** | **float**| ID of operating system |
+ **id** | **float**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -218,14 +170,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -234,54 +180,42 @@ No authorization required
 
 List operating systems where this template is set as a default
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.OsDefaultTemplatesApi()
+provisioning_template_id = 'provisioning_template_id_example' # str | ID of provisioning template
+operatingsystem_id = 8.14 # float | ID of operating system
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+page = 8.14 # float | Page number, starting at 1 (optional)
+per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.OsDefaultTemplatesApi(api_client)
-    provisioning_template_id = 'provisioning_template_id_example' # str | ID of provisioning template
-    operatingsystem_id = 3.4 # float | ID of operating system
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    page = 3.4 # float | Page number, starting at 1 (optional)
-    per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
-
-    try:
-        # List operating systems where this template is set as a default
-        api_instance.get_provisioning_templates_provisioning_template_id_os_default_templates(provisioning_template_id, operatingsystem_id, location_id=location_id, organization_id=organization_id, page=page, per_page=per_page)
-    except Exception as e:
-        print("Exception when calling OsDefaultTemplatesApi->get_provisioning_templates_provisioning_template_id_os_default_templates: %s\n" % e)
+try:
+    # List operating systems where this template is set as a default
+    api_instance.get_provisioning_templates_provisioning_template_id_os_default_templates(provisioning_template_id, operatingsystem_id, location_id=location_id, organization_id=organization_id, page=page, per_page=per_page)
+except ApiException as e:
+    print("Exception when calling OsDefaultTemplatesApi->get_provisioning_templates_provisioning_template_id_os_default_templates: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **provisioning_template_id** | **str**| ID of provisioning template | 
- **operatingsystem_id** | **float**| ID of operating system | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **page** | **float**| Page number, starting at 1 | [optional] 
- **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional] 
+ **provisioning_template_id** | **str**| ID of provisioning template |
+ **operatingsystem_id** | **float**| ID of operating system |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **page** | **float**| Page number, starting at 1 | [optional]
+ **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional]
 
 ### Return type
 
@@ -293,14 +227,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -309,52 +237,40 @@ No authorization required
 
 Create a default template combination for an operating system
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.OsDefaultTemplatesApi()
+operatingsystem_id = 8.14 # float | ID of operating system
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+os_default_template_template_kind_id = 8.14 # float |  (optional)
+os_default_template_provisioning_template_id = 8.14 # float | ID of provisioning template (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.OsDefaultTemplatesApi(api_client)
-    operatingsystem_id = 3.4 # float | ID of operating system
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    os_default_template_template_kind_id = 3.4 # float |  (optional)
-    os_default_template_provisioning_template_id = 3.4 # float | ID of provisioning template (optional)
-
-    try:
-        # Create a default template combination for an operating system
-        api_instance.post_operatingsystems_operatingsystem_id_os_default_templates(operatingsystem_id, location_id=location_id, organization_id=organization_id, os_default_template_template_kind_id=os_default_template_template_kind_id, os_default_template_provisioning_template_id=os_default_template_provisioning_template_id)
-    except Exception as e:
-        print("Exception when calling OsDefaultTemplatesApi->post_operatingsystems_operatingsystem_id_os_default_templates: %s\n" % e)
+try:
+    # Create a default template combination for an operating system
+    api_instance.post_operatingsystems_operatingsystem_id_os_default_templates(operatingsystem_id, location_id=location_id, organization_id=organization_id, os_default_template_template_kind_id=os_default_template_template_kind_id, os_default_template_provisioning_template_id=os_default_template_provisioning_template_id)
+except ApiException as e:
+    print("Exception when calling OsDefaultTemplatesApi->post_operatingsystems_operatingsystem_id_os_default_templates: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **operatingsystem_id** | **float**| ID of operating system | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **os_default_template_template_kind_id** | **float**|  | [optional] 
- **os_default_template_provisioning_template_id** | **float**| ID of provisioning template | [optional] 
+ **operatingsystem_id** | **float**| ID of operating system |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **os_default_template_template_kind_id** | **float**|  | [optional]
+ **os_default_template_provisioning_template_id** | **float**| ID of provisioning template | [optional]
 
 ### Return type
 
@@ -368,12 +284,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -382,54 +292,42 @@ No authorization required
 
 Update a default template combination for an operating system
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.OsDefaultTemplatesApi()
+operatingsystem_id = 8.14 # float | ID of operating system
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+os_default_template_template_kind_id = 8.14 # float |  (optional)
+os_default_template_provisioning_template_id = 8.14 # float | ID of provisioning template (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.OsDefaultTemplatesApi(api_client)
-    operatingsystem_id = 3.4 # float | ID of operating system
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    os_default_template_template_kind_id = 3.4 # float |  (optional)
-    os_default_template_provisioning_template_id = 3.4 # float | ID of provisioning template (optional)
-
-    try:
-        # Update a default template combination for an operating system
-        api_instance.put_operatingsystems_operatingsystem_id_os_default_templates_id(operatingsystem_id, id, location_id=location_id, organization_id=organization_id, os_default_template_template_kind_id=os_default_template_template_kind_id, os_default_template_provisioning_template_id=os_default_template_provisioning_template_id)
-    except Exception as e:
-        print("Exception when calling OsDefaultTemplatesApi->put_operatingsystems_operatingsystem_id_os_default_templates_id: %s\n" % e)
+try:
+    # Update a default template combination for an operating system
+    api_instance.put_operatingsystems_operatingsystem_id_os_default_templates_id(operatingsystem_id, id, location_id=location_id, organization_id=organization_id, os_default_template_template_kind_id=os_default_template_template_kind_id, os_default_template_provisioning_template_id=os_default_template_provisioning_template_id)
+except ApiException as e:
+    print("Exception when calling OsDefaultTemplatesApi->put_operatingsystems_operatingsystem_id_os_default_templates_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **operatingsystem_id** | **float**| ID of operating system | 
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **os_default_template_template_kind_id** | **float**|  | [optional] 
- **os_default_template_provisioning_template_id** | **float**| ID of provisioning template | [optional] 
+ **operatingsystem_id** | **float**| ID of operating system |
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **os_default_template_template_kind_id** | **float**|  | [optional]
+ **os_default_template_provisioning_template_id** | **float**| ID of provisioning template | [optional]
 
 ### Return type
 
@@ -444,11 +342,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

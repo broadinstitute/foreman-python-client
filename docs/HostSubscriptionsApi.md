@@ -1,4 +1,4 @@
-# foreman.HostSubscriptionsApi
+# pyforeman.HostSubscriptionsApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**put_hosts_host_id_subscriptions_add_subscriptions**](HostSubscriptionsApi.md#put_hosts_host_id_subscriptions_add_subscriptions) | **PUT** /hosts/{host_id}/subscriptions/add_subscriptions | Add a subscription to a host
 [**put_hosts_host_id_subscriptions_auto_attach**](HostSubscriptionsApi.md#put_hosts_host_id_subscriptions_auto_attach) | **PUT** /hosts/{host_id}/subscriptions/auto_attach | Trigger an auto-attach of subscriptions
 [**put_hosts_host_id_subscriptions_content_override**](HostSubscriptionsApi.md#put_hosts_host_id_subscriptions_content_override) | **PUT** /hosts/{host_id}/subscriptions/content_override | Set content overrides for the host
-[**put_hosts_host_id_subscriptions_remove_subscriptions**](HostSubscriptionsApi.md#put_hosts_host_id_subscriptions_remove_subscriptions) | **PUT** /hosts/{host_id}/subscriptions/remove_subscriptions | 
+[**put_hosts_host_id_subscriptions_remove_subscriptions**](HostSubscriptionsApi.md#put_hosts_host_id_subscriptions_remove_subscriptions) | **PUT** /hosts/{host_id}/subscriptions/remove_subscriptions |
 
 
 # **delete_hosts_host_id_subscriptions**
@@ -21,44 +21,32 @@ Method | HTTP request | Description
 
 Unregister the host as a subscription consumer
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 8.14 # float | Id of the host
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 3.4 # float | Id of the host
-
-    try:
-        # Unregister the host as a subscription consumer
-        api_instance.delete_hosts_host_id_subscriptions(host_id)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->delete_hosts_host_id_subscriptions: %s\n" % e)
+try:
+    # Unregister the host as a subscription consumer
+    api_instance.delete_hosts_host_id_subscriptions(host_id)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->delete_hosts_host_id_subscriptions: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **float**| Id of the host | 
+ **host_id** | **float**| Id of the host |
 
 ### Return type
 
@@ -70,14 +58,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -86,44 +68,32 @@ No authorization required
 
 List a host's subscriptions
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 8.14 # float | Id of the host
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 3.4 # float | Id of the host
-
-    try:
-        # List a host's subscriptions
-        api_instance.get_hosts_host_id_subscriptions(host_id)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->get_hosts_host_id_subscriptions: %s\n" % e)
+try:
+    # List a host's subscriptions
+    api_instance.get_hosts_host_id_subscriptions(host_id)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->get_hosts_host_id_subscriptions: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **float**| Id of the host | 
+ **host_id** | **float**| Id of the host |
 
 ### Return type
 
@@ -135,14 +105,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -151,44 +115,32 @@ No authorization required
 
 Show releases available for the content host
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 'host_id_example' # str | id of host
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 'host_id_example' # str | id of host
-
-    try:
-        # Show releases available for the content host
-        api_instance.get_hosts_host_id_subscriptions_available_release_versions(host_id)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->get_hosts_host_id_subscriptions_available_release_versions: %s\n" % e)
+try:
+    # Show releases available for the content host
+    api_instance.get_hosts_host_id_subscriptions_available_release_versions(host_id)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->get_hosts_host_id_subscriptions_available_release_versions: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **str**| id of host | 
+ **host_id** | **str**| id of host |
 
 ### Return type
 
@@ -200,14 +152,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -216,44 +162,32 @@ No authorization required
 
 Show repositories enabled on the host that are known to Katello
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 'host_id_example' # str | id of host
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 'host_id_example' # str | id of host
-
-    try:
-        # Show repositories enabled on the host that are known to Katello
-        api_instance.get_hosts_host_id_subscriptions_enabled_repositories(host_id)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->get_hosts_host_id_subscriptions_enabled_repositories: %s\n" % e)
+try:
+    # Show repositories enabled on the host that are known to Katello
+    api_instance.get_hosts_host_id_subscriptions_enabled_repositories(host_id)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->get_hosts_host_id_subscriptions_enabled_repositories: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **str**| id of host | 
+ **host_id** | **str**| id of host |
 
 ### Return type
 
@@ -265,14 +199,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -281,62 +209,50 @@ No authorization required
 
 Get content and overrides for the host
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 'host_id_example' # str | Id of the host
+content_access_mode_all = true # bool | Get all content available, not just that provided by subscriptions (optional)
+content_access_mode_env = true # bool | Limit content to just that available in the host's content view version (optional)
+search = 'search_example' # str | Search string (optional)
+page = 8.14 # float | Page number, starting at 1 (optional)
+per_page = 8.14 # float | Number of results per page to return (optional)
+order = 'order_example' # str | Sort field and order, eg. 'id DESC' (optional)
+full_result = true # bool | Whether or not to show all results (optional)
+sort_by = 'sort_by_example' # str | Field to sort the results on (optional)
+sort_order = 'sort_order_example' # str | How to order the sorted results (e.g. ASC for ascending) (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 'host_id_example' # str | Id of the host
-    content_access_mode_all = True # bool | Get all content available, not just that provided by subscriptions (optional)
-    content_access_mode_env = True # bool | Limit content to just that available in the host's content view version (optional)
-    search = 'search_example' # str | Search string (optional)
-    page = 3.4 # float | Page number, starting at 1 (optional)
-    per_page = 3.4 # float | Number of results per page to return (optional)
-    order = 'order_example' # str | Sort field and order, eg. 'id DESC' (optional)
-    full_result = True # bool | Whether or not to show all results (optional)
-    sort_by = 'sort_by_example' # str | Field to sort the results on (optional)
-    sort_order = 'sort_order_example' # str | How to order the sorted results (e.g. ASC for ascending) (optional)
-
-    try:
-        # Get content and overrides for the host
-        api_instance.get_hosts_host_id_subscriptions_product_content(host_id, content_access_mode_all=content_access_mode_all, content_access_mode_env=content_access_mode_env, search=search, page=page, per_page=per_page, order=order, full_result=full_result, sort_by=sort_by, sort_order=sort_order)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->get_hosts_host_id_subscriptions_product_content: %s\n" % e)
+try:
+    # Get content and overrides for the host
+    api_instance.get_hosts_host_id_subscriptions_product_content(host_id, content_access_mode_all=content_access_mode_all, content_access_mode_env=content_access_mode_env, search=search, page=page, per_page=per_page, order=order, full_result=full_result, sort_by=sort_by, sort_order=sort_order)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->get_hosts_host_id_subscriptions_product_content: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **str**| Id of the host | 
- **content_access_mode_all** | **bool**| Get all content available, not just that provided by subscriptions | [optional] 
- **content_access_mode_env** | **bool**| Limit content to just that available in the host&#39;s content view version | [optional] 
- **search** | **str**| Search string | [optional] 
- **page** | **float**| Page number, starting at 1 | [optional] 
- **per_page** | **float**| Number of results per page to return | [optional] 
- **order** | **str**| Sort field and order, eg. &#39;id DESC&#39; | [optional] 
- **full_result** | **bool**| Whether or not to show all results | [optional] 
- **sort_by** | **str**| Field to sort the results on | [optional] 
- **sort_order** | **str**| How to order the sorted results (e.g. ASC for ascending) | [optional] 
+ **host_id** | **str**| Id of the host |
+ **content_access_mode_all** | **bool**| Get all content available, not just that provided by subscriptions | [optional]
+ **content_access_mode_env** | **bool**| Limit content to just that available in the host&#39;s content view version | [optional]
+ **search** | **str**| Search string | [optional]
+ **page** | **float**| Page number, starting at 1 | [optional]
+ **per_page** | **float**| Number of results per page to return | [optional]
+ **order** | **str**| Sort field and order, eg. &#39;id DESC&#39; | [optional]
+ **full_result** | **bool**| Whether or not to show all results | [optional]
+ **sort_by** | **str**| Field to sort the results on | [optional]
+ **sort_order** | **str**| How to order the sorted results (e.g. ASC for ascending) | [optional]
 
 ### Return type
 
@@ -348,14 +264,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -364,58 +274,46 @@ No authorization required
 
 Register a host with subscription and information
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+name = 'name_example' # str | Name of the host
+lifecycle_environment_id = 8.14 # float | Lifecycle Environment ID
+content_view_id = 8.14 # float | Content View ID
+uuid = 'uuid_example' # str | UUID to use for registered host, random uuid is generated if not provided (optional)
+hypervisor_guest_uuids = ['hypervisor_guest_uuids_example'] # list[str] | UUIDs of the virtual guests from the host's hypervisor (optional)
+installed_products = ['installed_products_example'] # list[str] | List of products installed on the host (optional)
+release_version = 'release_version_example' # str | Release version of the content host (optional)
+service_level = 'service_level_example' # str | A service level for auto-healing process, e.g. SELF-SUPPORT (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    name = 'name_example' # str | Name of the host
-    lifecycle_environment_id = 3.4 # float | Lifecycle Environment ID
-    content_view_id = 3.4 # float | Content View ID
-    uuid = 'uuid_example' # str | UUID to use for registered host, random uuid is generated if not provided (optional)
-    hypervisor_guest_uuids = ['hypervisor_guest_uuids_example'] # List[str] | UUIDs of the virtual guests from the host's hypervisor (optional)
-    installed_products = ['installed_products_example'] # List[str] | List of products installed on the host (optional)
-    release_version = 'release_version_example' # str | Release version of the content host (optional)
-    service_level = 'service_level_example' # str | A service level for auto-healing process, e.g. SELF-SUPPORT (optional)
-
-    try:
-        # Register a host with subscription and information
-        api_instance.post_hosts_subscriptions(name, lifecycle_environment_id, content_view_id, uuid=uuid, hypervisor_guest_uuids=hypervisor_guest_uuids, installed_products=installed_products, release_version=release_version, service_level=service_level)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->post_hosts_subscriptions: %s\n" % e)
+try:
+    # Register a host with subscription and information
+    api_instance.post_hosts_subscriptions(name, lifecycle_environment_id, content_view_id, uuid=uuid, hypervisor_guest_uuids=hypervisor_guest_uuids, installed_products=installed_products, release_version=release_version, service_level=service_level)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->post_hosts_subscriptions: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| Name of the host | 
- **lifecycle_environment_id** | **float**| Lifecycle Environment ID | 
- **content_view_id** | **float**| Content View ID | 
- **uuid** | **str**| UUID to use for registered host, random uuid is generated if not provided | [optional] 
- **hypervisor_guest_uuids** | [**List[str]**](str.md)| UUIDs of the virtual guests from the host&#39;s hypervisor | [optional] 
- **installed_products** | [**List[str]**](str.md)| List of products installed on the host | [optional] 
- **release_version** | **str**| Release version of the content host | [optional] 
- **service_level** | **str**| A service level for auto-healing process, e.g. SELF-SUPPORT | [optional] 
+ **name** | **str**| Name of the host |
+ **lifecycle_environment_id** | **float**| Lifecycle Environment ID |
+ **content_view_id** | **float**| Content View ID |
+ **uuid** | **str**| UUID to use for registered host, random uuid is generated if not provided | [optional]
+ **hypervisor_guest_uuids** | [**list[str]**](str.md)| UUIDs of the virtual guests from the host&#39;s hypervisor | [optional]
+ **installed_products** | [**list[str]**](str.md)| List of products installed on the host | [optional]
+ **release_version** | **str**| Release version of the content host | [optional]
+ **service_level** | **str**| A service level for auto-healing process, e.g. SELF-SUPPORT | [optional]
 
 ### Return type
 
@@ -429,12 +327,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -443,46 +335,34 @@ No authorization required
 
 Add a subscription to a host
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 8.14 # float | Id of the host
+subscriptions = ['subscriptions_example'] # list[str] | Array of subscriptions to add
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 3.4 # float | Id of the host
-    subscriptions = ['subscriptions_example'] # List[str] | Array of subscriptions to add
-
-    try:
-        # Add a subscription to a host
-        api_instance.put_hosts_host_id_subscriptions_add_subscriptions(host_id, subscriptions)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->put_hosts_host_id_subscriptions_add_subscriptions: %s\n" % e)
+try:
+    # Add a subscription to a host
+    api_instance.put_hosts_host_id_subscriptions_add_subscriptions(host_id, subscriptions)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->put_hosts_host_id_subscriptions_add_subscriptions: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **float**| Id of the host | 
- **subscriptions** | [**List[str]**](str.md)| Array of subscriptions to add | 
+ **host_id** | **float**| Id of the host |
+ **subscriptions** | [**list[str]**](str.md)| Array of subscriptions to add |
 
 ### Return type
 
@@ -496,12 +376,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -510,44 +384,32 @@ No authorization required
 
 Trigger an auto-attach of subscriptions
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 8.14 # float | Id of the host
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 3.4 # float | Id of the host
-
-    try:
-        # Trigger an auto-attach of subscriptions
-        api_instance.put_hosts_host_id_subscriptions_auto_attach(host_id)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->put_hosts_host_id_subscriptions_auto_attach: %s\n" % e)
+try:
+    # Trigger an auto-attach of subscriptions
+    api_instance.put_hosts_host_id_subscriptions_auto_attach(host_id)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->put_hosts_host_id_subscriptions_auto_attach: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **float**| Id of the host | 
+ **host_id** | **float**| Id of the host |
 
 ### Return type
 
@@ -559,14 +421,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -575,66 +431,54 @@ No authorization required
 
 Set content overrides for the host
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 'host_id_example' # str | Id of the content host
+value = 'value_example' # str | Override to a boolean value or 'default' (optional)
+content_overrides = ['content_overrides_example'] # list[str] | Array of Content override parameters (optional)
+content_overrides_search_search = 'content_overrides_search_search_example' # str | Search string (optional)
+content_overrides_search_page = 8.14 # float | Page number, starting at 1 (optional)
+content_overrides_search_per_page = 8.14 # float | Number of results per page to return (optional)
+content_overrides_search_order = 'content_overrides_search_order_example' # str | Sort field and order, eg. 'id DESC' (optional)
+content_overrides_search_full_result = true # bool | Whether or not to show all results (optional)
+content_overrides_search_sort_by = 'content_overrides_search_sort_by_example' # str | Field to sort the results on (optional)
+content_overrides_search_sort_order = 'content_overrides_search_sort_order_example' # str | How to order the sorted results (e.g. ASC for ascending) (optional)
+content_overrides_search_enabled = true # bool | Set true to override to enabled; Set false to override to disabled.' (optional)
+content_overrides_search_remove = true # bool | Set true to remove an override and reset it to 'default' (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 'host_id_example' # str | Id of the content host
-    value = 'value_example' # str | Override to a boolean value or 'default' (optional)
-    content_overrides = ['content_overrides_example'] # List[str] | Array of Content override parameters (optional)
-    content_overrides_search_search = 'content_overrides_search_search_example' # str | Search string (optional)
-    content_overrides_search_page = 3.4 # float | Page number, starting at 1 (optional)
-    content_overrides_search_per_page = 3.4 # float | Number of results per page to return (optional)
-    content_overrides_search_order = 'content_overrides_search_order_example' # str | Sort field and order, eg. 'id DESC' (optional)
-    content_overrides_search_full_result = True # bool | Whether or not to show all results (optional)
-    content_overrides_search_sort_by = 'content_overrides_search_sort_by_example' # str | Field to sort the results on (optional)
-    content_overrides_search_sort_order = 'content_overrides_search_sort_order_example' # str | How to order the sorted results (e.g. ASC for ascending) (optional)
-    content_overrides_search_enabled = True # bool | Set true to override to enabled; Set false to override to disabled.' (optional)
-    content_overrides_search_remove = True # bool | Set true to remove an override and reset it to 'default' (optional)
-
-    try:
-        # Set content overrides for the host
-        api_instance.put_hosts_host_id_subscriptions_content_override(host_id, value=value, content_overrides=content_overrides, content_overrides_search_search=content_overrides_search_search, content_overrides_search_page=content_overrides_search_page, content_overrides_search_per_page=content_overrides_search_per_page, content_overrides_search_order=content_overrides_search_order, content_overrides_search_full_result=content_overrides_search_full_result, content_overrides_search_sort_by=content_overrides_search_sort_by, content_overrides_search_sort_order=content_overrides_search_sort_order, content_overrides_search_enabled=content_overrides_search_enabled, content_overrides_search_remove=content_overrides_search_remove)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->put_hosts_host_id_subscriptions_content_override: %s\n" % e)
+try:
+    # Set content overrides for the host
+    api_instance.put_hosts_host_id_subscriptions_content_override(host_id, value=value, content_overrides=content_overrides, content_overrides_search_search=content_overrides_search_search, content_overrides_search_page=content_overrides_search_page, content_overrides_search_per_page=content_overrides_search_per_page, content_overrides_search_order=content_overrides_search_order, content_overrides_search_full_result=content_overrides_search_full_result, content_overrides_search_sort_by=content_overrides_search_sort_by, content_overrides_search_sort_order=content_overrides_search_sort_order, content_overrides_search_enabled=content_overrides_search_enabled, content_overrides_search_remove=content_overrides_search_remove)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->put_hosts_host_id_subscriptions_content_override: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **str**| Id of the content host | 
- **value** | **str**| Override to a boolean value or &#39;default&#39; | [optional] 
- **content_overrides** | [**List[str]**](str.md)| Array of Content override parameters | [optional] 
- **content_overrides_search_search** | **str**| Search string | [optional] 
- **content_overrides_search_page** | **float**| Page number, starting at 1 | [optional] 
- **content_overrides_search_per_page** | **float**| Number of results per page to return | [optional] 
- **content_overrides_search_order** | **str**| Sort field and order, eg. &#39;id DESC&#39; | [optional] 
- **content_overrides_search_full_result** | **bool**| Whether or not to show all results | [optional] 
- **content_overrides_search_sort_by** | **str**| Field to sort the results on | [optional] 
- **content_overrides_search_sort_order** | **str**| How to order the sorted results (e.g. ASC for ascending) | [optional] 
- **content_overrides_search_enabled** | **bool**| Set true to override to enabled; Set false to override to disabled.&#39; | [optional] 
- **content_overrides_search_remove** | **bool**| Set true to remove an override and reset it to &#39;default&#39; | [optional] 
+ **host_id** | **str**| Id of the content host |
+ **value** | **str**| Override to a boolean value or &#39;default&#39; | [optional]
+ **content_overrides** | [**list[str]**](str.md)| Array of Content override parameters | [optional]
+ **content_overrides_search_search** | **str**| Search string | [optional]
+ **content_overrides_search_page** | **float**| Page number, starting at 1 | [optional]
+ **content_overrides_search_per_page** | **float**| Number of results per page to return | [optional]
+ **content_overrides_search_order** | **str**| Sort field and order, eg. &#39;id DESC&#39; | [optional]
+ **content_overrides_search_full_result** | **bool**| Whether or not to show all results | [optional]
+ **content_overrides_search_sort_by** | **str**| Field to sort the results on | [optional]
+ **content_overrides_search_sort_order** | **str**| How to order the sorted results (e.g. ASC for ascending) | [optional]
+ **content_overrides_search_enabled** | **bool**| Set true to override to enabled; Set false to override to disabled.&#39; | [optional]
+ **content_overrides_search_remove** | **bool**| Set true to remove an override and reset it to &#39;default&#39; | [optional]
 
 ### Return type
 
@@ -648,12 +492,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -662,45 +500,33 @@ No authorization required
 
 
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.HostSubscriptionsApi()
+host_id = 8.14 # float | Id of the host
+subscriptions = ['subscriptions_example'] # list[str] | Array of subscriptions to remove (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.HostSubscriptionsApi(api_client)
-    host_id = 3.4 # float | Id of the host
-    subscriptions = ['subscriptions_example'] # List[str] | Array of subscriptions to remove (optional)
-
-    try:
-        api_instance.put_hosts_host_id_subscriptions_remove_subscriptions(host_id, subscriptions=subscriptions)
-    except Exception as e:
-        print("Exception when calling HostSubscriptionsApi->put_hosts_host_id_subscriptions_remove_subscriptions: %s\n" % e)
+try:
+    api_instance.put_hosts_host_id_subscriptions_remove_subscriptions(host_id, subscriptions=subscriptions)
+except ApiException as e:
+    print("Exception when calling HostSubscriptionsApi->put_hosts_host_id_subscriptions_remove_subscriptions: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_id** | **float**| Id of the host | 
- **subscriptions** | [**List[str]**](str.md)| Array of subscriptions to remove | [optional] 
+ **host_id** | **float**| Id of the host |
+ **subscriptions** | [**list[str]**](str.md)| Array of subscriptions to remove | [optional]
 
 ### Return type
 
@@ -715,11 +541,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

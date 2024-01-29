@@ -1,4 +1,4 @@
-# foreman.ContentUploadsApi
+# pyforeman.ContentUploadsApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -14,46 +14,34 @@ Method | HTTP request | Description
 
 Delete an upload request
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentUploadsApi()
+repository_id = 8.14 # float | Repository id
+id = 'id_example' # str | Upload request id
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentUploadsApi(api_client)
-    repository_id = 3.4 # float | Repository id
-    id = 'id_example' # str | Upload request id
-
-    try:
-        # Delete an upload request
-        api_instance.delete_repositories_repository_id_content_uploads_id(repository_id, id)
-    except Exception as e:
-        print("Exception when calling ContentUploadsApi->delete_repositories_repository_id_content_uploads_id: %s\n" % e)
+try:
+    # Delete an upload request
+    api_instance.delete_repositories_repository_id_content_uploads_id(repository_id, id)
+except ApiException as e:
+    print("Exception when calling ContentUploadsApi->delete_repositories_repository_id_content_uploads_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repository_id** | **float**| Repository id | 
- **id** | **str**| Upload request id | 
+ **repository_id** | **float**| Repository id |
+ **id** | **str**| Upload request id |
 
 ### Return type
 
@@ -65,14 +53,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -81,50 +63,38 @@ No authorization required
 
 Create an upload request
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentUploadsApi()
+repository_id = 8.14 # float | repository id
+size = 8.14 # float | Size of file to upload
+checksum = 'checksum_example' # str | Checksum of file to upload (optional)
+content_type = 'content_type_example' # str | content type ('deb', 'docker_manifest', 'file', 'ostree_ref', 'rpm', 'srpm') (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentUploadsApi(api_client)
-    repository_id = 3.4 # float | repository id
-    size = 3.4 # float | Size of file to upload
-    checksum = 'checksum_example' # str | Checksum of file to upload (optional)
-    content_type = 'content_type_example' # str | content type ('deb', 'docker_manifest', 'file', 'ostree_ref', 'rpm', 'srpm') (optional)
-
-    try:
-        # Create an upload request
-        api_instance.post_repositories_repository_id_content_uploads(repository_id, size, checksum=checksum, content_type=content_type)
-    except Exception as e:
-        print("Exception when calling ContentUploadsApi->post_repositories_repository_id_content_uploads: %s\n" % e)
+try:
+    # Create an upload request
+    api_instance.post_repositories_repository_id_content_uploads(repository_id, size, checksum=checksum, content_type=content_type)
+except ApiException as e:
+    print("Exception when calling ContentUploadsApi->post_repositories_repository_id_content_uploads: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repository_id** | **float**| repository id | 
- **size** | **float**| Size of file to upload | 
- **checksum** | **str**| Checksum of file to upload | [optional] 
- **content_type** | **str**| content type (&#39;deb&#39;, &#39;docker_manifest&#39;, &#39;file&#39;, &#39;ostree_ref&#39;, &#39;rpm&#39;, &#39;srpm&#39;) | [optional] 
+ **repository_id** | **float**| repository id |
+ **size** | **float**| Size of file to upload |
+ **checksum** | **str**| Checksum of file to upload | [optional]
+ **content_type** | **str**| content type (&#39;deb&#39;, &#39;docker_manifest&#39;, &#39;file&#39;, &#39;ostree_ref&#39;, &#39;rpm&#39;, &#39;srpm&#39;) | [optional]
 
 ### Return type
 
@@ -138,12 +108,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -152,52 +116,40 @@ No authorization required
 
 Upload a chunk of the file's content
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentUploadsApi()
+repository_id = 8.14 # float | Repository id
+id = 'id_example' # str | Upload request id
+size = 8.14 # float | Size of file to upload
+offset = 8.14 # float | The offset in the file where the content starts
+content = '/path/to/file.txt' # file | The actual file contents
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentUploadsApi(api_client)
-    repository_id = 3.4 # float | Repository id
-    id = 'id_example' # str | Upload request id
-    size = 3.4 # float | Size of file to upload
-    offset = 3.4 # float | The offset in the file where the content starts
-    content = None # bytearray | The actual file contents
-
-    try:
-        # Upload a chunk of the file's content
-        api_instance.put_repositories_repository_id_content_uploads_id(repository_id, id, size, offset, content)
-    except Exception as e:
-        print("Exception when calling ContentUploadsApi->put_repositories_repository_id_content_uploads_id: %s\n" % e)
+try:
+    # Upload a chunk of the file's content
+    api_instance.put_repositories_repository_id_content_uploads_id(repository_id, id, size, offset, content)
+except ApiException as e:
+    print("Exception when calling ContentUploadsApi->put_repositories_repository_id_content_uploads_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repository_id** | **float**| Repository id | 
- **id** | **str**| Upload request id | 
- **size** | **float**| Size of file to upload | 
- **offset** | **float**| The offset in the file where the content starts | 
- **content** | **bytearray**| The actual file contents | 
+ **repository_id** | **float**| Repository id |
+ **id** | **str**| Upload request id |
+ **size** | **float**| Size of file to upload |
+ **offset** | **float**| The offset in the file where the content starts |
+ **content** | **file**| The actual file contents |
 
 ### Return type
 
@@ -212,11 +164,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

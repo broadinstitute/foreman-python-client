@@ -1,4 +1,4 @@
-# foreman.SyncApi
+# pyforeman.SyncApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -12,44 +12,32 @@ Method | HTTP request | Description
 
 Get status of synchronisation for given repository
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SyncApi()
+repository_id = 8.14 # float |
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SyncApi(api_client)
-    repository_id = 3.4 # float | 
-
-    try:
-        # Get status of synchronisation for given repository
-        api_instance.get_repositories_repository_id_sync(repository_id)
-    except Exception as e:
-        print("Exception when calling SyncApi->get_repositories_repository_id_sync: %s\n" % e)
+try:
+    # Get status of synchronisation for given repository
+    api_instance.get_repositories_repository_id_sync(repository_id)
+except ApiException as e:
+    print("Exception when calling SyncApi->get_repositories_repository_id_sync: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repository_id** | **float**|  | 
+ **repository_id** | **float**|  |
 
 ### Return type
 
@@ -61,14 +49,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

@@ -1,4 +1,4 @@
-# foreman.ContentViewVersionsApi
+# pyforeman.ContentViewVersionsApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -19,44 +19,32 @@ Method | HTTP request | Description
 
 Remove content view version
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentViewVersionsApi()
+id = 8.14 # float | Content view version identifier
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentViewVersionsApi(api_client)
-    id = 3.4 # float | Content view version identifier
-
-    try:
-        # Remove content view version
-        api_instance.delete_content_view_versions_id(id)
-    except Exception as e:
-        print("Exception when calling ContentViewVersionsApi->delete_content_view_versions_id: %s\n" % e)
+try:
+    # Remove content view version
+    api_instance.delete_content_view_versions_id(id)
+except ApiException as e:
+    print("Exception when calling ContentViewVersionsApi->delete_content_view_versions_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Content view version identifier | 
+ **id** | **float**| Content view version identifier |
 
 ### Return type
 
@@ -68,14 +56,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -84,74 +66,62 @@ No authorization required
 
 List content view versions
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentViewVersionsApi()
+content_view_id = 8.14 # float | Content view identifier
+environment_id = 8.14 # float | Filter versions by environment (optional)
+version = 'version_example' # str | Filter versions by version number (optional)
+composite_version_id = 8.14 # float | Filter versions that are components in the specified composite version (optional)
+organization_id = 8.14 # float | Organization identifier (optional)
+include_applied_filters = true # bool | Whether or not to return filters applied to the content view version (optional)
+triggered_by_id = 8.14 # float | Filter composite versions whose publish was triggered by the specified component version (optional)
+file_id = 8.14 # float | Filter content view versions that contain the file (optional)
+nondefault = true # bool | Filter out default content views (optional)
+search = 'search_example' # str | Search string (optional)
+page = 8.14 # float | Page number, starting at 1 (optional)
+per_page = 8.14 # float | Number of results per page to return (optional)
+order = 'order_example' # str | Sort field and order, eg. 'id DESC' (optional)
+full_result = true # bool | Whether or not to show all results (optional)
+sort_by = 'sort_by_example' # str | Field to sort the results on (optional)
+sort_order = 'sort_order_example' # str | How to order the sorted results (e.g. ASC for ascending) (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentViewVersionsApi(api_client)
-    content_view_id = 3.4 # float | Content view identifier
-    environment_id = 3.4 # float | Filter versions by environment (optional)
-    version = 'version_example' # str | Filter versions by version number (optional)
-    composite_version_id = 3.4 # float | Filter versions that are components in the specified composite version (optional)
-    organization_id = 3.4 # float | Organization identifier (optional)
-    include_applied_filters = True # bool | Whether or not to return filters applied to the content view version (optional)
-    triggered_by_id = 3.4 # float | Filter composite versions whose publish was triggered by the specified component version (optional)
-    file_id = 3.4 # float | Filter content view versions that contain the file (optional)
-    nondefault = True # bool | Filter out default content views (optional)
-    search = 'search_example' # str | Search string (optional)
-    page = 3.4 # float | Page number, starting at 1 (optional)
-    per_page = 3.4 # float | Number of results per page to return (optional)
-    order = 'order_example' # str | Sort field and order, eg. 'id DESC' (optional)
-    full_result = True # bool | Whether or not to show all results (optional)
-    sort_by = 'sort_by_example' # str | Field to sort the results on (optional)
-    sort_order = 'sort_order_example' # str | How to order the sorted results (e.g. ASC for ascending) (optional)
-
-    try:
-        # List content view versions
-        api_instance.get_content_view_versions(content_view_id, environment_id=environment_id, version=version, composite_version_id=composite_version_id, organization_id=organization_id, include_applied_filters=include_applied_filters, triggered_by_id=triggered_by_id, file_id=file_id, nondefault=nondefault, search=search, page=page, per_page=per_page, order=order, full_result=full_result, sort_by=sort_by, sort_order=sort_order)
-    except Exception as e:
-        print("Exception when calling ContentViewVersionsApi->get_content_view_versions: %s\n" % e)
+try:
+    # List content view versions
+    api_instance.get_content_view_versions(content_view_id, environment_id=environment_id, version=version, composite_version_id=composite_version_id, organization_id=organization_id, include_applied_filters=include_applied_filters, triggered_by_id=triggered_by_id, file_id=file_id, nondefault=nondefault, search=search, page=page, per_page=per_page, order=order, full_result=full_result, sort_by=sort_by, sort_order=sort_order)
+except ApiException as e:
+    print("Exception when calling ContentViewVersionsApi->get_content_view_versions: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_view_id** | **float**| Content view identifier | 
- **environment_id** | **float**| Filter versions by environment | [optional] 
- **version** | **str**| Filter versions by version number | [optional] 
- **composite_version_id** | **float**| Filter versions that are components in the specified composite version | [optional] 
- **organization_id** | **float**| Organization identifier | [optional] 
- **include_applied_filters** | **bool**| Whether or not to return filters applied to the content view version | [optional] 
- **triggered_by_id** | **float**| Filter composite versions whose publish was triggered by the specified component version | [optional] 
- **file_id** | **float**| Filter content view versions that contain the file | [optional] 
- **nondefault** | **bool**| Filter out default content views | [optional] 
- **search** | **str**| Search string | [optional] 
- **page** | **float**| Page number, starting at 1 | [optional] 
- **per_page** | **float**| Number of results per page to return | [optional] 
- **order** | **str**| Sort field and order, eg. &#39;id DESC&#39; | [optional] 
- **full_result** | **bool**| Whether or not to show all results | [optional] 
- **sort_by** | **str**| Field to sort the results on | [optional] 
- **sort_order** | **str**| How to order the sorted results (e.g. ASC for ascending) | [optional] 
+ **content_view_id** | **float**| Content view identifier |
+ **environment_id** | **float**| Filter versions by environment | [optional]
+ **version** | **str**| Filter versions by version number | [optional]
+ **composite_version_id** | **float**| Filter versions that are components in the specified composite version | [optional]
+ **organization_id** | **float**| Organization identifier | [optional]
+ **include_applied_filters** | **bool**| Whether or not to return filters applied to the content view version | [optional]
+ **triggered_by_id** | **float**| Filter composite versions whose publish was triggered by the specified component version | [optional]
+ **file_id** | **float**| Filter content view versions that contain the file | [optional]
+ **nondefault** | **bool**| Filter out default content views | [optional]
+ **search** | **str**| Search string | [optional]
+ **page** | **float**| Page number, starting at 1 | [optional]
+ **per_page** | **float**| Number of results per page to return | [optional]
+ **order** | **str**| Sort field and order, eg. &#39;id DESC&#39; | [optional]
+ **full_result** | **bool**| Whether or not to show all results | [optional]
+ **sort_by** | **str**| Field to sort the results on | [optional]
+ **sort_order** | **str**| How to order the sorted results (e.g. ASC for ascending) | [optional]
 
 ### Return type
 
@@ -163,14 +133,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -179,46 +143,34 @@ No authorization required
 
 Show content view version
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentViewVersionsApi()
+id = 8.14 # float | Content view version identifier
+include_applied_filters = true # bool | Whether or not to return filters applied to the content view version (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentViewVersionsApi(api_client)
-    id = 3.4 # float | Content view version identifier
-    include_applied_filters = True # bool | Whether or not to return filters applied to the content view version (optional)
-
-    try:
-        # Show content view version
-        api_instance.get_content_view_versions_id(id, include_applied_filters=include_applied_filters)
-    except Exception as e:
-        print("Exception when calling ContentViewVersionsApi->get_content_view_versions_id: %s\n" % e)
+try:
+    # Show content view version
+    api_instance.get_content_view_versions_id(id, include_applied_filters=include_applied_filters)
+except ApiException as e:
+    print("Exception when calling ContentViewVersionsApi->get_content_view_versions_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Content view version identifier | 
- **include_applied_filters** | **bool**| Whether or not to return filters applied to the content view version | [optional] 
+ **id** | **float**| Content view version identifier |
+ **include_applied_filters** | **bool**| Whether or not to return filters applied to the content view version | [optional]
 
 ### Return type
 
@@ -230,14 +182,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -246,74 +192,62 @@ No authorization required
 
 List content view versions
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentViewVersionsApi()
+content_view_id = 8.14 # float | Content view identifier
+environment_id = 8.14 # float | Filter versions by environment (optional)
+version = 'version_example' # str | Filter versions by version number (optional)
+composite_version_id = 8.14 # float | Filter versions that are components in the specified composite version (optional)
+organization_id = 8.14 # float | Organization identifier (optional)
+include_applied_filters = true # bool | Whether or not to return filters applied to the content view version (optional)
+triggered_by_id = 8.14 # float | Filter composite versions whose publish was triggered by the specified component version (optional)
+file_id = 8.14 # float | Filter content view versions that contain the file (optional)
+nondefault = true # bool | Filter out default content views (optional)
+search = 'search_example' # str | Search string (optional)
+page = 8.14 # float | Page number, starting at 1 (optional)
+per_page = 8.14 # float | Number of results per page to return (optional)
+order = 'order_example' # str | Sort field and order, eg. 'id DESC' (optional)
+full_result = true # bool | Whether or not to show all results (optional)
+sort_by = 'sort_by_example' # str | Field to sort the results on (optional)
+sort_order = 'sort_order_example' # str | How to order the sorted results (e.g. ASC for ascending) (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentViewVersionsApi(api_client)
-    content_view_id = 3.4 # float | Content view identifier
-    environment_id = 3.4 # float | Filter versions by environment (optional)
-    version = 'version_example' # str | Filter versions by version number (optional)
-    composite_version_id = 3.4 # float | Filter versions that are components in the specified composite version (optional)
-    organization_id = 3.4 # float | Organization identifier (optional)
-    include_applied_filters = True # bool | Whether or not to return filters applied to the content view version (optional)
-    triggered_by_id = 3.4 # float | Filter composite versions whose publish was triggered by the specified component version (optional)
-    file_id = 3.4 # float | Filter content view versions that contain the file (optional)
-    nondefault = True # bool | Filter out default content views (optional)
-    search = 'search_example' # str | Search string (optional)
-    page = 3.4 # float | Page number, starting at 1 (optional)
-    per_page = 3.4 # float | Number of results per page to return (optional)
-    order = 'order_example' # str | Sort field and order, eg. 'id DESC' (optional)
-    full_result = True # bool | Whether or not to show all results (optional)
-    sort_by = 'sort_by_example' # str | Field to sort the results on (optional)
-    sort_order = 'sort_order_example' # str | How to order the sorted results (e.g. ASC for ascending) (optional)
-
-    try:
-        # List content view versions
-        api_instance.get_content_views_content_view_id_content_view_versions(content_view_id, environment_id=environment_id, version=version, composite_version_id=composite_version_id, organization_id=organization_id, include_applied_filters=include_applied_filters, triggered_by_id=triggered_by_id, file_id=file_id, nondefault=nondefault, search=search, page=page, per_page=per_page, order=order, full_result=full_result, sort_by=sort_by, sort_order=sort_order)
-    except Exception as e:
-        print("Exception when calling ContentViewVersionsApi->get_content_views_content_view_id_content_view_versions: %s\n" % e)
+try:
+    # List content view versions
+    api_instance.get_content_views_content_view_id_content_view_versions(content_view_id, environment_id=environment_id, version=version, composite_version_id=composite_version_id, organization_id=organization_id, include_applied_filters=include_applied_filters, triggered_by_id=triggered_by_id, file_id=file_id, nondefault=nondefault, search=search, page=page, per_page=per_page, order=order, full_result=full_result, sort_by=sort_by, sort_order=sort_order)
+except ApiException as e:
+    print("Exception when calling ContentViewVersionsApi->get_content_views_content_view_id_content_view_versions: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_view_id** | **float**| Content view identifier | 
- **environment_id** | **float**| Filter versions by environment | [optional] 
- **version** | **str**| Filter versions by version number | [optional] 
- **composite_version_id** | **float**| Filter versions that are components in the specified composite version | [optional] 
- **organization_id** | **float**| Organization identifier | [optional] 
- **include_applied_filters** | **bool**| Whether or not to return filters applied to the content view version | [optional] 
- **triggered_by_id** | **float**| Filter composite versions whose publish was triggered by the specified component version | [optional] 
- **file_id** | **float**| Filter content view versions that contain the file | [optional] 
- **nondefault** | **bool**| Filter out default content views | [optional] 
- **search** | **str**| Search string | [optional] 
- **page** | **float**| Page number, starting at 1 | [optional] 
- **per_page** | **float**| Number of results per page to return | [optional] 
- **order** | **str**| Sort field and order, eg. &#39;id DESC&#39; | [optional] 
- **full_result** | **bool**| Whether or not to show all results | [optional] 
- **sort_by** | **str**| Field to sort the results on | [optional] 
- **sort_order** | **str**| How to order the sorted results (e.g. ASC for ascending) | [optional] 
+ **content_view_id** | **float**| Content view identifier |
+ **environment_id** | **float**| Filter versions by environment | [optional]
+ **version** | **str**| Filter versions by version number | [optional]
+ **composite_version_id** | **float**| Filter versions that are components in the specified composite version | [optional]
+ **organization_id** | **float**| Organization identifier | [optional]
+ **include_applied_filters** | **bool**| Whether or not to return filters applied to the content view version | [optional]
+ **triggered_by_id** | **float**| Filter composite versions whose publish was triggered by the specified component version | [optional]
+ **file_id** | **float**| Filter content view versions that contain the file | [optional]
+ **nondefault** | **bool**| Filter out default content views | [optional]
+ **search** | **str**| Search string | [optional]
+ **page** | **float**| Page number, starting at 1 | [optional]
+ **per_page** | **float**| Number of results per page to return | [optional]
+ **order** | **str**| Sort field and order, eg. &#39;id DESC&#39; | [optional]
+ **full_result** | **bool**| Whether or not to show all results | [optional]
+ **sort_by** | **str**| Field to sort the results on | [optional]
+ **sort_order** | **str**| How to order the sorted results (e.g. ASC for ascending) | [optional]
 
 ### Return type
 
@@ -325,14 +259,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -341,50 +269,38 @@ No authorization required
 
 Promote a content view version
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentViewVersionsApi()
+id = 8.14 # float | Content view version identifier
+force = true # bool | force content view promotion and bypass lifecycle environment restriction (optional)
+environment_ids = ['environment_ids_example'] # list[str] | Identifiers for Lifecycle Environment (optional)
+description = 'description_example' # str | The description for the content view version promotion (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentViewVersionsApi(api_client)
-    id = 3.4 # float | Content view version identifier
-    force = True # bool | force content view promotion and bypass lifecycle environment restriction (optional)
-    environment_ids = ['environment_ids_example'] # List[str] | Identifiers for Lifecycle Environment (optional)
-    description = 'description_example' # str | The description for the content view version promotion (optional)
-
-    try:
-        # Promote a content view version
-        api_instance.post_content_view_versions_id_promote(id, force=force, environment_ids=environment_ids, description=description)
-    except Exception as e:
-        print("Exception when calling ContentViewVersionsApi->post_content_view_versions_id_promote: %s\n" % e)
+try:
+    # Promote a content view version
+    api_instance.post_content_view_versions_id_promote(id, force=force, environment_ids=environment_ids, description=description)
+except ApiException as e:
+    print("Exception when calling ContentViewVersionsApi->post_content_view_versions_id_promote: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Content view version identifier | 
- **force** | **bool**| force content view promotion and bypass lifecycle environment restriction | [optional] 
- **environment_ids** | [**List[str]**](str.md)| Identifiers for Lifecycle Environment | [optional] 
- **description** | **str**| The description for the content view version promotion | [optional] 
+ **id** | **float**| Content view version identifier |
+ **force** | **bool**| force content view promotion and bypass lifecycle environment restriction | [optional]
+ **environment_ids** | [**list[str]**](str.md)| Identifiers for Lifecycle Environment | [optional]
+ **description** | **str**| The description for the content view version promotion | [optional]
 
 ### Return type
 
@@ -398,12 +314,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -412,62 +322,50 @@ No authorization required
 
 Perform an Incremental Update on one or more Content View Versions
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentViewVersionsApi()
+content_view_version_environments = ['content_view_version_environments_example'] # list[str] |  (optional)
+description = 'description_example' # str | The description for the new generated Content View Versions (optional)
+resolve_dependencies = true # bool | If true, when adding the specified errata or packages, any needed dependencies will be copied as well. Defaults to true (optional)
+propagate_all_composites = true # bool | If true, will publish a new composite version using any specified content_view_version_id that has been promoted to a lifecycle environment (optional)
+add_content_errata_ids = ['add_content_errata_ids_example'] # list[str] | Errata ids to copy into the new versions (optional)
+add_content_package_ids = ['add_content_package_ids_example'] # list[str] | Package ids to copy into the new versions (optional)
+add_content_deb_ids = ['add_content_deb_ids_example'] # list[str] | Deb Package ids to copy into the new versions (optional)
+update_hosts_included_search = 'update_hosts_included_search_example' # str | Search string for host to perform an action on (optional)
+update_hosts_included_ids = ['update_hosts_included_ids_example'] # list[str] | List of host ids to perform an action on (optional)
+update_hosts_excluded_ids = ['update_hosts_excluded_ids_example'] # list[str] | List of host ids to exclude and not run an action on (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentViewVersionsApi(api_client)
-    content_view_version_environments = ['content_view_version_environments_example'] # List[str] |  (optional)
-    description = 'description_example' # str | The description for the new generated Content View Versions (optional)
-    resolve_dependencies = True # bool | If true, when adding the specified errata or packages, any needed dependencies will be copied as well. Defaults to true (optional)
-    propagate_all_composites = True # bool | If true, will publish a new composite version using any specified content_view_version_id that has been promoted to a lifecycle environment (optional)
-    add_content_errata_ids = ['add_content_errata_ids_example'] # List[str] | Errata ids to copy into the new versions (optional)
-    add_content_package_ids = ['add_content_package_ids_example'] # List[str] | Package ids to copy into the new versions (optional)
-    add_content_deb_ids = ['add_content_deb_ids_example'] # List[str] | Deb Package ids to copy into the new versions (optional)
-    update_hosts_included_search = 'update_hosts_included_search_example' # str | Search string for host to perform an action on (optional)
-    update_hosts_included_ids = ['update_hosts_included_ids_example'] # List[str] | List of host ids to perform an action on (optional)
-    update_hosts_excluded_ids = ['update_hosts_excluded_ids_example'] # List[str] | List of host ids to exclude and not run an action on (optional)
-
-    try:
-        # Perform an Incremental Update on one or more Content View Versions
-        api_instance.post_content_view_versions_incremental_update(content_view_version_environments=content_view_version_environments, description=description, resolve_dependencies=resolve_dependencies, propagate_all_composites=propagate_all_composites, add_content_errata_ids=add_content_errata_ids, add_content_package_ids=add_content_package_ids, add_content_deb_ids=add_content_deb_ids, update_hosts_included_search=update_hosts_included_search, update_hosts_included_ids=update_hosts_included_ids, update_hosts_excluded_ids=update_hosts_excluded_ids)
-    except Exception as e:
-        print("Exception when calling ContentViewVersionsApi->post_content_view_versions_incremental_update: %s\n" % e)
+try:
+    # Perform an Incremental Update on one or more Content View Versions
+    api_instance.post_content_view_versions_incremental_update(content_view_version_environments=content_view_version_environments, description=description, resolve_dependencies=resolve_dependencies, propagate_all_composites=propagate_all_composites, add_content_errata_ids=add_content_errata_ids, add_content_package_ids=add_content_package_ids, add_content_deb_ids=add_content_deb_ids, update_hosts_included_search=update_hosts_included_search, update_hosts_included_ids=update_hosts_included_ids, update_hosts_excluded_ids=update_hosts_excluded_ids)
+except ApiException as e:
+    print("Exception when calling ContentViewVersionsApi->post_content_view_versions_incremental_update: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_view_version_environments** | [**List[str]**](str.md)|  | [optional] 
- **description** | **str**| The description for the new generated Content View Versions | [optional] 
- **resolve_dependencies** | **bool**| If true, when adding the specified errata or packages, any needed dependencies will be copied as well. Defaults to true | [optional] 
- **propagate_all_composites** | **bool**| If true, will publish a new composite version using any specified content_view_version_id that has been promoted to a lifecycle environment | [optional] 
- **add_content_errata_ids** | [**List[str]**](str.md)| Errata ids to copy into the new versions | [optional] 
- **add_content_package_ids** | [**List[str]**](str.md)| Package ids to copy into the new versions | [optional] 
- **add_content_deb_ids** | [**List[str]**](str.md)| Deb Package ids to copy into the new versions | [optional] 
- **update_hosts_included_search** | **str**| Search string for host to perform an action on | [optional] 
- **update_hosts_included_ids** | [**List[str]**](str.md)| List of host ids to perform an action on | [optional] 
- **update_hosts_excluded_ids** | [**List[str]**](str.md)| List of host ids to exclude and not run an action on | [optional] 
+ **content_view_version_environments** | [**list[str]**](str.md)|  | [optional]
+ **description** | **str**| The description for the new generated Content View Versions | [optional]
+ **resolve_dependencies** | **bool**| If true, when adding the specified errata or packages, any needed dependencies will be copied as well. Defaults to true | [optional]
+ **propagate_all_composites** | **bool**| If true, will publish a new composite version using any specified content_view_version_id that has been promoted to a lifecycle environment | [optional]
+ **add_content_errata_ids** | [**list[str]**](str.md)| Errata ids to copy into the new versions | [optional]
+ **add_content_package_ids** | [**list[str]**](str.md)| Package ids to copy into the new versions | [optional]
+ **add_content_deb_ids** | [**list[str]**](str.md)| Deb Package ids to copy into the new versions | [optional]
+ **update_hosts_included_search** | **str**| Search string for host to perform an action on | [optional]
+ **update_hosts_included_ids** | [**list[str]**](str.md)| List of host ids to perform an action on | [optional]
+ **update_hosts_excluded_ids** | [**list[str]**](str.md)| List of host ids to exclude and not run an action on | [optional]
 
 ### Return type
 
@@ -481,12 +379,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -495,46 +387,34 @@ No authorization required
 
 Update a content view version
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentViewVersionsApi()
+id = 8.14 # float | Content view version identifier
+description = 'description_example' # str | The description for the content view version
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentViewVersionsApi(api_client)
-    id = 3.4 # float | Content view version identifier
-    description = 'description_example' # str | The description for the content view version
-
-    try:
-        # Update a content view version
-        api_instance.put_content_view_versions_id(id, description)
-    except Exception as e:
-        print("Exception when calling ContentViewVersionsApi->put_content_view_versions_id: %s\n" % e)
+try:
+    # Update a content view version
+    api_instance.put_content_view_versions_id(id, description)
+except ApiException as e:
+    print("Exception when calling ContentViewVersionsApi->put_content_view_versions_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Content view version identifier | 
- **description** | **str**| The description for the content view version | 
+ **id** | **float**| Content view version identifier |
+ **description** | **str**| The description for the content view version |
 
 ### Return type
 
@@ -548,12 +428,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -562,46 +436,34 @@ No authorization required
 
 Forces a republish of the version's repositories' metadata
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ContentViewVersionsApi()
+id = 8.14 # float | Content view version identifier
+force = true # bool | Force metadata regeneration to proceed. Dangerous operation when version has repositories with the 'Complete Mirroring' mirroring policy (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ContentViewVersionsApi(api_client)
-    id = 3.4 # float | Content view version identifier
-    force = True # bool | Force metadata regeneration to proceed. Dangerous operation when version has repositories with the 'Complete Mirroring' mirroring policy (optional)
-
-    try:
-        # Forces a republish of the version's repositories' metadata
-        api_instance.put_content_view_versions_id_republish_repositories(id, force=force)
-    except Exception as e:
-        print("Exception when calling ContentViewVersionsApi->put_content_view_versions_id_republish_repositories: %s\n" % e)
+try:
+    # Forces a republish of the version's repositories' metadata
+    api_instance.put_content_view_versions_id_republish_repositories(id, force=force)
+except ApiException as e:
+    print("Exception when calling ContentViewVersionsApi->put_content_view_versions_id_republish_repositories: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Content view version identifier | 
- **force** | **bool**| Force metadata regeneration to proceed. Dangerous operation when version has repositories with the &#39;Complete Mirroring&#39; mirroring policy | [optional] 
+ **id** | **float**| Content view version identifier |
+ **force** | **bool**| Force metadata regeneration to proceed. Dangerous operation when version has repositories with the &#39;Complete Mirroring&#39; mirroring policy | [optional]
 
 ### Return type
 
@@ -616,11 +478,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
