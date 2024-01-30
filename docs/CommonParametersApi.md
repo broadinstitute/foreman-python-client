@@ -1,4 +1,4 @@
-# foreman.CommonParametersApi
+# pyforeman.CommonParametersApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -16,48 +16,36 @@ Method | HTTP request | Description
 
 Delete a global parameter
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CommonParametersApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CommonParametersApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Delete a global parameter
-        api_instance.delete_common_parameters_id(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling CommonParametersApi->delete_common_parameters_id: %s\n" % e)
+try:
+    # Delete a global parameter
+    api_instance.delete_common_parameters_id(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling CommonParametersApi->delete_common_parameters_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -71,12 +59,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -85,56 +67,44 @@ No authorization required
 
 List all global parameters
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CommonParametersApi()
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+show_hidden = true # bool | Display hidden values (optional)
+search = 'search_example' # str | filter results (optional)
+order = 'order_example' # str | Sort and order by a searchable field, e.g. '<field> DESC' (optional)
+page = 8.14 # float | Page number, starting at 1 (optional)
+per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CommonParametersApi(api_client)
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    show_hidden = True # bool | Display hidden values (optional)
-    search = 'search_example' # str | filter results (optional)
-    order = 'order_example' # str | Sort and order by a searchable field, e.g. '<field> DESC' (optional)
-    page = 3.4 # float | Page number, starting at 1 (optional)
-    per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
-
-    try:
-        # List all global parameters
-        api_instance.get_common_parameters(location_id=location_id, organization_id=organization_id, show_hidden=show_hidden, search=search, order=order, page=page, per_page=per_page)
-    except Exception as e:
-        print("Exception when calling CommonParametersApi->get_common_parameters: %s\n" % e)
+try:
+    # List all global parameters
+    api_instance.get_common_parameters(location_id=location_id, organization_id=organization_id, show_hidden=show_hidden, search=search, order=order, page=page, per_page=per_page)
+except ApiException as e:
+    print("Exception when calling CommonParametersApi->get_common_parameters: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **show_hidden** | **bool**| Display hidden values | [optional] 
- **search** | **str**| filter results | [optional] 
- **order** | **str**| Sort and order by a searchable field, e.g. &#39;&lt;field&gt; DESC&#39; | [optional] 
- **page** | **float**| Page number, starting at 1 | [optional] 
- **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional] 
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **show_hidden** | **bool**| Display hidden values | [optional]
+ **search** | **str**| filter results | [optional]
+ **order** | **str**| Sort and order by a searchable field, e.g. &#39;&lt;field&gt; DESC&#39; | [optional]
+ **page** | **float**| Page number, starting at 1 | [optional]
+ **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional]
 
 ### Return type
 
@@ -146,14 +116,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -162,50 +126,38 @@ No authorization required
 
 Show a global parameter
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CommonParametersApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+show_hidden = true # bool | Display hidden values (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CommonParametersApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    show_hidden = True # bool | Display hidden values (optional)
-
-    try:
-        # Show a global parameter
-        api_instance.get_common_parameters_id(id, location_id=location_id, organization_id=organization_id, show_hidden=show_hidden)
-    except Exception as e:
-        print("Exception when calling CommonParametersApi->get_common_parameters_id: %s\n" % e)
+try:
+    # Show a global parameter
+    api_instance.get_common_parameters_id(id, location_id=location_id, organization_id=organization_id, show_hidden=show_hidden)
+except ApiException as e:
+    print("Exception when calling CommonParametersApi->get_common_parameters_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **show_hidden** | **bool**| Display hidden values | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **show_hidden** | **bool**| Display hidden values | [optional]
 
 ### Return type
 
@@ -217,14 +169,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -233,54 +179,42 @@ No authorization required
 
 Create a global parameter
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CommonParametersApi()
+common_parameter_name = 'common_parameter_name_example' # str |
+common_parameter_value = 'common_parameter_value_example' # str |
+common_parameter_parameter_type = 'common_parameter_parameter_type_example' # str | Type of value
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+common_parameter_hidden_value = true # bool |  (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CommonParametersApi(api_client)
-    common_parameter_name = 'common_parameter_name_example' # str | 
-    common_parameter_value = 'common_parameter_value_example' # str | 
-    common_parameter_parameter_type = 'common_parameter_parameter_type_example' # str | Type of value
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    common_parameter_hidden_value = True # bool |  (optional)
-
-    try:
-        # Create a global parameter
-        api_instance.post_common_parameters(common_parameter_name, common_parameter_value, common_parameter_parameter_type, location_id=location_id, organization_id=organization_id, common_parameter_hidden_value=common_parameter_hidden_value)
-    except Exception as e:
-        print("Exception when calling CommonParametersApi->post_common_parameters: %s\n" % e)
+try:
+    # Create a global parameter
+    api_instance.post_common_parameters(common_parameter_name, common_parameter_value, common_parameter_parameter_type, location_id=location_id, organization_id=organization_id, common_parameter_hidden_value=common_parameter_hidden_value)
+except ApiException as e:
+    print("Exception when calling CommonParametersApi->post_common_parameters: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **common_parameter_name** | **str**|  | 
- **common_parameter_value** | **str**|  | 
- **common_parameter_parameter_type** | **str**| Type of value | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **common_parameter_hidden_value** | **bool**|  | [optional] 
+ **common_parameter_name** | **str**|  |
+ **common_parameter_value** | **str**|  |
+ **common_parameter_parameter_type** | **str**| Type of value |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **common_parameter_hidden_value** | **bool**|  | [optional]
 
 ### Return type
 
@@ -294,12 +228,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -308,56 +236,44 @@ No authorization required
 
 Update a global parameter
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CommonParametersApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+common_parameter_name = 'common_parameter_name_example' # str |  (optional)
+common_parameter_value = 'common_parameter_value_example' # str |  (optional)
+common_parameter_parameter_type = 'common_parameter_parameter_type_example' # str | Type of value (optional)
+common_parameter_hidden_value = true # bool |  (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CommonParametersApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    common_parameter_name = 'common_parameter_name_example' # str |  (optional)
-    common_parameter_value = 'common_parameter_value_example' # str |  (optional)
-    common_parameter_parameter_type = 'common_parameter_parameter_type_example' # str | Type of value (optional)
-    common_parameter_hidden_value = True # bool |  (optional)
-
-    try:
-        # Update a global parameter
-        api_instance.put_common_parameters_id(id, location_id=location_id, organization_id=organization_id, common_parameter_name=common_parameter_name, common_parameter_value=common_parameter_value, common_parameter_parameter_type=common_parameter_parameter_type, common_parameter_hidden_value=common_parameter_hidden_value)
-    except Exception as e:
-        print("Exception when calling CommonParametersApi->put_common_parameters_id: %s\n" % e)
+try:
+    # Update a global parameter
+    api_instance.put_common_parameters_id(id, location_id=location_id, organization_id=organization_id, common_parameter_name=common_parameter_name, common_parameter_value=common_parameter_value, common_parameter_parameter_type=common_parameter_parameter_type, common_parameter_hidden_value=common_parameter_hidden_value)
+except ApiException as e:
+    print("Exception when calling CommonParametersApi->put_common_parameters_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **common_parameter_name** | **str**|  | [optional] 
- **common_parameter_value** | **str**|  | [optional] 
- **common_parameter_parameter_type** | **str**| Type of value | [optional] 
- **common_parameter_hidden_value** | **bool**|  | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **common_parameter_name** | **str**|  | [optional]
+ **common_parameter_value** | **str**|  | [optional]
+ **common_parameter_parameter_type** | **str**| Type of value | [optional]
+ **common_parameter_hidden_value** | **bool**|  | [optional]
 
 ### Return type
 
@@ -372,11 +288,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

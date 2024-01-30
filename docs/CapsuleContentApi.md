@@ -1,4 +1,4 @@
-# foreman.CapsuleContentApi
+# pyforeman.CapsuleContentApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -21,46 +21,34 @@ Method | HTTP request | Description
 
 Remove lifecycle environments from the smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
+environment_id = 8.14 # float | Id of the lifecycle environment
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-    environment_id = 3.4 # float | Id of the lifecycle environment
-
-    try:
-        # Remove lifecycle environments from the smart proxy
-        api_instance.delete_capsules_id_content_lifecycle_environments_environment_id(id, environment_id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->delete_capsules_id_content_lifecycle_environments_environment_id: %s\n" % e)
+try:
+    # Remove lifecycle environments from the smart proxy
+    api_instance.delete_capsules_id_content_lifecycle_environments_environment_id(id, environment_id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->delete_capsules_id_content_lifecycle_environments_environment_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
- **environment_id** | **float**| Id of the lifecycle environment | 
+ **id** | **float**| Id of the smart proxy |
+ **environment_id** | **float**| Id of the lifecycle environment |
 
 ### Return type
 
@@ -72,14 +60,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -88,44 +70,32 @@ No authorization required
 
 Cancel running smart proxy synchronization
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-
-    try:
-        # Cancel running smart proxy synchronization
-        api_instance.delete_capsules_id_content_sync(id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->delete_capsules_id_content_sync: %s\n" % e)
+try:
+    # Cancel running smart proxy synchronization
+    api_instance.delete_capsules_id_content_sync(id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->delete_capsules_id_content_sync: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
+ **id** | **float**| Id of the smart proxy |
 
 ### Return type
 
@@ -137,14 +107,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -153,46 +117,34 @@ No authorization required
 
 List the lifecycle environments not attached to the smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
+organization_id = 8.14 # float | Id of the organization to limit environments on (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-    organization_id = 3.4 # float | Id of the organization to limit environments on (optional)
-
-    try:
-        # List the lifecycle environments not attached to the smart proxy
-        api_instance.get_capsules_id_content_available_lifecycle_environments(id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->get_capsules_id_content_available_lifecycle_environments: %s\n" % e)
+try:
+    # List the lifecycle environments not attached to the smart proxy
+    api_instance.get_capsules_id_content_available_lifecycle_environments(id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->get_capsules_id_content_available_lifecycle_environments: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
- **organization_id** | **float**| Id of the organization to limit environments on | [optional] 
+ **id** | **float**| Id of the smart proxy |
+ **organization_id** | **float**| Id of the organization to limit environments on | [optional]
 
 ### Return type
 
@@ -204,14 +156,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -220,44 +166,32 @@ No authorization required
 
 List content counts for the smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-
-    try:
-        # List content counts for the smart proxy
-        api_instance.get_capsules_id_content_counts(id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->get_capsules_id_content_counts: %s\n" % e)
+try:
+    # List content counts for the smart proxy
+    api_instance.get_capsules_id_content_counts(id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->get_capsules_id_content_counts: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
+ **id** | **float**| Id of the smart proxy |
 
 ### Return type
 
@@ -269,14 +203,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -285,46 +213,34 @@ No authorization required
 
 List the lifecycle environments attached to the smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
+organization_id = 8.14 # float | Id of the organization to limit environments on (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-    organization_id = 3.4 # float | Id of the organization to limit environments on (optional)
-
-    try:
-        # List the lifecycle environments attached to the smart proxy
-        api_instance.get_capsules_id_content_lifecycle_environments(id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->get_capsules_id_content_lifecycle_environments: %s\n" % e)
+try:
+    # List the lifecycle environments attached to the smart proxy
+    api_instance.get_capsules_id_content_lifecycle_environments(id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->get_capsules_id_content_lifecycle_environments: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
- **organization_id** | **float**| Id of the organization to limit environments on | [optional] 
+ **id** | **float**| Id of the smart proxy |
+ **organization_id** | **float**| Id of the organization to limit environments on | [optional]
 
 ### Return type
 
@@ -336,14 +252,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -352,46 +262,34 @@ No authorization required
 
 Get current smart proxy synchronization status
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
+organization_id = 8.14 # float | Id of the organization to get the status for (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-    organization_id = 3.4 # float | Id of the organization to get the status for (optional)
-
-    try:
-        # Get current smart proxy synchronization status
-        api_instance.get_capsules_id_content_sync(id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->get_capsules_id_content_sync: %s\n" % e)
+try:
+    # Get current smart proxy synchronization status
+    api_instance.get_capsules_id_content_sync(id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->get_capsules_id_content_sync: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
- **organization_id** | **float**| Id of the organization to get the status for | [optional] 
+ **id** | **float**| Id of the smart proxy |
+ **organization_id** | **float**| Id of the organization to get the status for | [optional]
 
 ### Return type
 
@@ -403,14 +301,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -419,46 +311,34 @@ No authorization required
 
 Add lifecycle environments to the smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
+environment_id = 8.14 # float | Id of the lifecycle environment
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-    environment_id = 3.4 # float | Id of the lifecycle environment
-
-    try:
-        # Add lifecycle environments to the smart proxy
-        api_instance.post_capsules_id_content_lifecycle_environments(id, environment_id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->post_capsules_id_content_lifecycle_environments: %s\n" % e)
+try:
+    # Add lifecycle environments to the smart proxy
+    api_instance.post_capsules_id_content_lifecycle_environments(id, environment_id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->post_capsules_id_content_lifecycle_environments: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
- **environment_id** | **float**| Id of the lifecycle environment | 
+ **id** | **float**| Id of the smart proxy |
+ **environment_id** | **float**| Id of the lifecycle environment |
 
 ### Return type
 
@@ -472,12 +352,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -486,117 +360,32 @@ No authorization required
 
 Reclaim space from all On Demand repositories on a smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-
-    try:
-        # Reclaim space from all On Demand repositories on a smart proxy
-        api_instance.post_capsules_id_content_reclaim_space(id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->post_capsules_id_content_reclaim_space: %s\n" % e)
+try:
+    # Reclaim space from all On Demand repositories on a smart proxy
+    api_instance.post_capsules_id_content_reclaim_space(id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->post_capsules_id_content_reclaim_space: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_capsules_id_content_sync**
-> post_capsules_id_content_sync(id, environment_id=environment_id, content_view_id=content_view_id, repository_id=repository_id, skip_metadata_check=skip_metadata_check)
-
-Synchronize the content to the smart proxy
-
-### Example
-
-
-```python
-import time
-import os
-import foreman
-from foreman.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
-
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-    environment_id = 3.4 # float | Id of the environment to limit the synchronization on (optional)
-    content_view_id = 3.4 # float | Id of the content view to limit the synchronization on (optional)
-    repository_id = 3.4 # float | Id of the repository to limit the synchronization on (optional)
-    skip_metadata_check = True # bool | Skip metadata check on each repository on the smart proxy (optional)
-
-    try:
-        # Synchronize the content to the smart proxy
-        api_instance.post_capsules_id_content_sync(id, environment_id=environment_id, content_view_id=content_view_id, repository_id=repository_id, skip_metadata_check=skip_metadata_check)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->post_capsules_id_content_sync: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
- **environment_id** | **float**| Id of the environment to limit the synchronization on | [optional] 
- **content_view_id** | **float**| Id of the content view to limit the synchronization on | [optional] 
- **repository_id** | **float**| Id of the repository to limit the synchronization on | [optional] 
- **skip_metadata_check** | **bool**| Skip metadata check on each repository on the smart proxy | [optional] 
+ **id** | **float**| Id of the smart proxy |
 
 ### Return type
 
@@ -611,57 +400,47 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_capsules_id_content_update_counts**
-> post_capsules_id_content_update_counts(id)
+# **post_capsules_id_content_sync**
+> post_capsules_id_content_sync(id, environment_id=environment_id, content_view_id=content_view_id, repository_id=repository_id, skip_metadata_check=skip_metadata_check)
 
-Update content counts for the smart proxy
+Synchronize the content to the smart proxy
+
+
 
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
+environment_id = 8.14 # float | Id of the environment to limit the synchronization on (optional)
+content_view_id = 8.14 # float | Id of the content view to limit the synchronization on (optional)
+repository_id = 8.14 # float | Id of the repository to limit the synchronization on (optional)
+skip_metadata_check = true # bool | Skip metadata check on each repository on the smart proxy (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.CapsuleContentApi(api_client)
-    id = 3.4 # float | Id of the smart proxy
-
-    try:
-        # Update content counts for the smart proxy
-        api_instance.post_capsules_id_content_update_counts(id)
-    except Exception as e:
-        print("Exception when calling CapsuleContentApi->post_capsules_id_content_update_counts: %s\n" % e)
+try:
+    # Synchronize the content to the smart proxy
+    api_instance.post_capsules_id_content_sync(id, environment_id=environment_id, content_view_id=content_view_id, repository_id=repository_id, skip_metadata_check=skip_metadata_check)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->post_capsules_id_content_sync: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| Id of the smart proxy | 
+ **id** | **float**| Id of the smart proxy |
+ **environment_id** | **float**| Id of the environment to limit the synchronization on | [optional]
+ **content_view_id** | **float**| Id of the content view to limit the synchronization on | [optional]
+ **repository_id** | **float**| Id of the repository to limit the synchronization on | [optional]
+ **skip_metadata_check** | **bool**| Skip metadata check on each repository on the smart proxy | [optional]
 
 ### Return type
 
@@ -673,14 +452,54 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **post_capsules_id_content_update_counts**
+> post_capsules_id_content_update_counts(id)
+
+Update content counts for the smart proxy
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import pyforeman
+from pyforeman.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = pyforeman.CapsuleContentApi()
+id = 8.14 # float | Id of the smart proxy
+
+try:
+    # Update content counts for the smart proxy
+    api_instance.post_capsules_id_content_update_counts(id)
+except ApiException as e:
+    print("Exception when calling CapsuleContentApi->post_capsules_id_content_update_counts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| Id of the smart proxy |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

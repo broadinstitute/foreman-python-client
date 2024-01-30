@@ -1,0 +1,6 @@
+# Ignore virtualenv directory
+.venv/
+
+# Ignore build files in autogen
+autogen/foreman/*
+autogen/foreman.tar.gz

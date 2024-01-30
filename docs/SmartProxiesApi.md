@@ -1,4 +1,4 @@
-# foreman.SmartProxiesApi
+# pyforeman.SmartProxiesApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -18,48 +18,36 @@ Method | HTTP request | Description
 
 Delete a smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SmartProxiesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SmartProxiesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Delete a smart proxy
-        api_instance.delete_smart_proxies_id(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling SmartProxiesApi->delete_smart_proxies_id: %s\n" % e)
+try:
+    # Delete a smart proxy
+    api_instance.delete_smart_proxies_id(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling SmartProxiesApi->delete_smart_proxies_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -73,12 +61,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -87,56 +69,44 @@ No authorization required
 
 List all smart proxies
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SmartProxiesApi()
+location_id = 8.14 # float | Scope by locations (optional)
+organization_id = 8.14 # float | Scope by organizations (optional)
+search = 'search_example' # str | filter results (optional)
+order = 'order_example' # str | Sort and order by a searchable field, e.g. '<field> DESC' (optional)
+page = 8.14 # float | Page number, starting at 1 (optional)
+per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
+include_status = true # bool | Flag to indicate whether to include status or not (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SmartProxiesApi(api_client)
-    location_id = 3.4 # float | Scope by locations (optional)
-    organization_id = 3.4 # float | Scope by organizations (optional)
-    search = 'search_example' # str | filter results (optional)
-    order = 'order_example' # str | Sort and order by a searchable field, e.g. '<field> DESC' (optional)
-    page = 3.4 # float | Page number, starting at 1 (optional)
-    per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
-    include_status = True # bool | Flag to indicate whether to include status or not (optional)
-
-    try:
-        # List all smart proxies
-        api_instance.get_smart_proxies(location_id=location_id, organization_id=organization_id, search=search, order=order, page=page, per_page=per_page, include_status=include_status)
-    except Exception as e:
-        print("Exception when calling SmartProxiesApi->get_smart_proxies: %s\n" % e)
+try:
+    # List all smart proxies
+    api_instance.get_smart_proxies(location_id=location_id, organization_id=organization_id, search=search, order=order, page=page, per_page=per_page, include_status=include_status)
+except ApiException as e:
+    print("Exception when calling SmartProxiesApi->get_smart_proxies: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location_id** | **float**| Scope by locations | [optional] 
- **organization_id** | **float**| Scope by organizations | [optional] 
- **search** | **str**| filter results | [optional] 
- **order** | **str**| Sort and order by a searchable field, e.g. &#39;&lt;field&gt; DESC&#39; | [optional] 
- **page** | **float**| Page number, starting at 1 | [optional] 
- **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional] 
- **include_status** | **bool**| Flag to indicate whether to include status or not | [optional] 
+ **location_id** | **float**| Scope by locations | [optional]
+ **organization_id** | **float**| Scope by organizations | [optional]
+ **search** | **str**| filter results | [optional]
+ **order** | **str**| Sort and order by a searchable field, e.g. &#39;&lt;field&gt; DESC&#39; | [optional]
+ **page** | **float**| Page number, starting at 1 | [optional]
+ **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional]
+ **include_status** | **bool**| Flag to indicate whether to include status or not | [optional]
 
 ### Return type
 
@@ -148,14 +118,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -164,52 +128,40 @@ No authorization required
 
 Show a smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SmartProxiesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+include_status = true # bool | Flag to indicate whether to include status or not (optional)
+include_version = true # bool | Flag to indicate whether to include version or not (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SmartProxiesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    include_status = True # bool | Flag to indicate whether to include status or not (optional)
-    include_version = True # bool | Flag to indicate whether to include version or not (optional)
-
-    try:
-        # Show a smart proxy
-        api_instance.get_smart_proxies_id(id, location_id=location_id, organization_id=organization_id, include_status=include_status, include_version=include_version)
-    except Exception as e:
-        print("Exception when calling SmartProxiesApi->get_smart_proxies_id: %s\n" % e)
+try:
+    # Show a smart proxy
+    api_instance.get_smart_proxies_id(id, location_id=location_id, organization_id=organization_id, include_status=include_status, include_version=include_version)
+except ApiException as e:
+    print("Exception when calling SmartProxiesApi->get_smart_proxies_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **include_status** | **bool**| Flag to indicate whether to include status or not | [optional] 
- **include_version** | **bool**| Flag to indicate whether to include version or not | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **include_status** | **bool**| Flag to indicate whether to include status or not | [optional]
+ **include_version** | **bool**| Flag to indicate whether to include version or not | [optional]
 
 ### Return type
 
@@ -221,14 +173,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -237,58 +183,46 @@ No authorization required
 
 Create a smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SmartProxiesApi()
+smart_proxy_name = 'smart_proxy_name_example' # str |
+smart_proxy_url = 'smart_proxy_url_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+smart_proxy_location_ids = ['smart_proxy_location_ids_example'] # list[str] | REPLACE locations with given ids (optional)
+smart_proxy_organization_ids = ['smart_proxy_organization_ids_example'] # list[str] | REPLACE organizations with given ids. (optional)
+smart_proxy_download_policy = 'smart_proxy_download_policy_example' # str | Download Policy of the capsule, must be one of on_demand, immediate, inherit, streamed (optional)
+smart_proxy_http_proxy_id = 8.14 # float | Id of the HTTP proxy to use with alternate content sources (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SmartProxiesApi(api_client)
-    smart_proxy_name = 'smart_proxy_name_example' # str | 
-    smart_proxy_url = 'smart_proxy_url_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    smart_proxy_location_ids = ['smart_proxy_location_ids_example'] # List[str] | REPLACE locations with given ids (optional)
-    smart_proxy_organization_ids = ['smart_proxy_organization_ids_example'] # List[str] | REPLACE organizations with given ids. (optional)
-    smart_proxy_download_policy = 'smart_proxy_download_policy_example' # str | Download Policy of the capsule, must be one of on_demand, immediate, inherit, streamed (optional)
-    smart_proxy_http_proxy_id = 3.4 # float | Id of the HTTP proxy to use with alternate content sources (optional)
-
-    try:
-        # Create a smart proxy
-        api_instance.post_smart_proxies(smart_proxy_name, smart_proxy_url, location_id=location_id, organization_id=organization_id, smart_proxy_location_ids=smart_proxy_location_ids, smart_proxy_organization_ids=smart_proxy_organization_ids, smart_proxy_download_policy=smart_proxy_download_policy, smart_proxy_http_proxy_id=smart_proxy_http_proxy_id)
-    except Exception as e:
-        print("Exception when calling SmartProxiesApi->post_smart_proxies: %s\n" % e)
+try:
+    # Create a smart proxy
+    api_instance.post_smart_proxies(smart_proxy_name, smart_proxy_url, location_id=location_id, organization_id=organization_id, smart_proxy_location_ids=smart_proxy_location_ids, smart_proxy_organization_ids=smart_proxy_organization_ids, smart_proxy_download_policy=smart_proxy_download_policy, smart_proxy_http_proxy_id=smart_proxy_http_proxy_id)
+except ApiException as e:
+    print("Exception when calling SmartProxiesApi->post_smart_proxies: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **smart_proxy_name** | **str**|  | 
- **smart_proxy_url** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **smart_proxy_location_ids** | [**List[str]**](str.md)| REPLACE locations with given ids | [optional] 
- **smart_proxy_organization_ids** | [**List[str]**](str.md)| REPLACE organizations with given ids. | [optional] 
- **smart_proxy_download_policy** | **str**| Download Policy of the capsule, must be one of on_demand, immediate, inherit, streamed | [optional] 
- **smart_proxy_http_proxy_id** | **float**| Id of the HTTP proxy to use with alternate content sources | [optional] 
+ **smart_proxy_name** | **str**|  |
+ **smart_proxy_url** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **smart_proxy_location_ids** | [**list[str]**](str.md)| REPLACE locations with given ids | [optional]
+ **smart_proxy_organization_ids** | [**list[str]**](str.md)| REPLACE organizations with given ids. | [optional]
+ **smart_proxy_download_policy** | **str**| Download Policy of the capsule, must be one of on_demand, immediate, inherit, streamed | [optional]
+ **smart_proxy_http_proxy_id** | **float**| Id of the HTTP proxy to use with alternate content sources | [optional]
 
 ### Return type
 
@@ -302,12 +236,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -316,48 +244,36 @@ No authorization required
 
 Import subnets from Smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SmartProxiesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SmartProxiesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Import subnets from Smart proxy
-        api_instance.post_smart_proxies_id_import_subnets(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling SmartProxiesApi->post_smart_proxies_id_import_subnets: %s\n" % e)
+try:
+    # Import subnets from Smart proxy
+    api_instance.post_smart_proxies_id_import_subnets(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling SmartProxiesApi->post_smart_proxies_id_import_subnets: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -371,12 +287,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -385,60 +295,48 @@ No authorization required
 
 Update a smart proxy
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SmartProxiesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+smart_proxy_name = 'smart_proxy_name_example' # str |  (optional)
+smart_proxy_url = 'smart_proxy_url_example' # str |  (optional)
+smart_proxy_location_ids = ['smart_proxy_location_ids_example'] # list[str] | REPLACE locations with given ids (optional)
+smart_proxy_organization_ids = ['smart_proxy_organization_ids_example'] # list[str] | REPLACE organizations with given ids. (optional)
+smart_proxy_download_policy = 'smart_proxy_download_policy_example' # str | Download Policy of the capsule, must be one of on_demand, immediate, inherit, streamed (optional)
+smart_proxy_http_proxy_id = 8.14 # float | Id of the HTTP proxy to use with alternate content sources (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SmartProxiesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    smart_proxy_name = 'smart_proxy_name_example' # str |  (optional)
-    smart_proxy_url = 'smart_proxy_url_example' # str |  (optional)
-    smart_proxy_location_ids = ['smart_proxy_location_ids_example'] # List[str] | REPLACE locations with given ids (optional)
-    smart_proxy_organization_ids = ['smart_proxy_organization_ids_example'] # List[str] | REPLACE organizations with given ids. (optional)
-    smart_proxy_download_policy = 'smart_proxy_download_policy_example' # str | Download Policy of the capsule, must be one of on_demand, immediate, inherit, streamed (optional)
-    smart_proxy_http_proxy_id = 3.4 # float | Id of the HTTP proxy to use with alternate content sources (optional)
-
-    try:
-        # Update a smart proxy
-        api_instance.put_smart_proxies_id(id, location_id=location_id, organization_id=organization_id, smart_proxy_name=smart_proxy_name, smart_proxy_url=smart_proxy_url, smart_proxy_location_ids=smart_proxy_location_ids, smart_proxy_organization_ids=smart_proxy_organization_ids, smart_proxy_download_policy=smart_proxy_download_policy, smart_proxy_http_proxy_id=smart_proxy_http_proxy_id)
-    except Exception as e:
-        print("Exception when calling SmartProxiesApi->put_smart_proxies_id: %s\n" % e)
+try:
+    # Update a smart proxy
+    api_instance.put_smart_proxies_id(id, location_id=location_id, organization_id=organization_id, smart_proxy_name=smart_proxy_name, smart_proxy_url=smart_proxy_url, smart_proxy_location_ids=smart_proxy_location_ids, smart_proxy_organization_ids=smart_proxy_organization_ids, smart_proxy_download_policy=smart_proxy_download_policy, smart_proxy_http_proxy_id=smart_proxy_http_proxy_id)
+except ApiException as e:
+    print("Exception when calling SmartProxiesApi->put_smart_proxies_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **smart_proxy_name** | **str**|  | [optional] 
- **smart_proxy_url** | **str**|  | [optional] 
- **smart_proxy_location_ids** | [**List[str]**](str.md)| REPLACE locations with given ids | [optional] 
- **smart_proxy_organization_ids** | [**List[str]**](str.md)| REPLACE organizations with given ids. | [optional] 
- **smart_proxy_download_policy** | **str**| Download Policy of the capsule, must be one of on_demand, immediate, inherit, streamed | [optional] 
- **smart_proxy_http_proxy_id** | **float**| Id of the HTTP proxy to use with alternate content sources | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **smart_proxy_name** | **str**|  | [optional]
+ **smart_proxy_url** | **str**|  | [optional]
+ **smart_proxy_location_ids** | [**list[str]**](str.md)| REPLACE locations with given ids | [optional]
+ **smart_proxy_organization_ids** | [**list[str]**](str.md)| REPLACE organizations with given ids. | [optional]
+ **smart_proxy_download_policy** | **str**| Download Policy of the capsule, must be one of on_demand, immediate, inherit, streamed | [optional]
+ **smart_proxy_http_proxy_id** | **float**| Id of the HTTP proxy to use with alternate content sources | [optional]
 
 ### Return type
 
@@ -452,12 +350,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -466,48 +358,36 @@ No authorization required
 
 Refresh smart proxy features
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.SmartProxiesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.SmartProxiesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Refresh smart proxy features
-        api_instance.put_smart_proxies_id_refresh(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling SmartProxiesApi->put_smart_proxies_id_refresh: %s\n" % e)
+try:
+    # Refresh smart proxy features
+    api_instance.put_smart_proxies_id_refresh(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling SmartProxiesApi->put_smart_proxies_id_refresh: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -522,11 +402,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

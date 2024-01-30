@@ -1,4 +1,4 @@
-# foreman.ComputeResourcesApi
+# pyforeman.ComputeResourcesApi
 
 All URIs are relative to *https://localhost:3000/api*
 
@@ -40,48 +40,36 @@ Method | HTTP request | Description
 
 Delete a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Delete a compute resource
-        api_instance.delete_compute_resources_id(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->delete_compute_resources_id: %s\n" % e)
+try:
+    # Delete a compute resource
+    api_instance.delete_compute_resources_id(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->delete_compute_resources_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -95,12 +83,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -109,50 +91,38 @@ No authorization required
 
 Delete a Virtual Machine
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+vm_id = 'vm_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    vm_id = 'vm_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Delete a Virtual Machine
-        api_instance.delete_compute_resources_id_available_virtual_machines_vm_id(id, vm_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->delete_compute_resources_id_available_virtual_machines_vm_id: %s\n" % e)
+try:
+    # Delete a Virtual Machine
+    api_instance.delete_compute_resources_id_available_virtual_machines_vm_id(id, vm_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->delete_compute_resources_id_available_virtual_machines_vm_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **vm_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **vm_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -166,12 +136,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -180,54 +144,42 @@ No authorization required
 
 List all compute resources
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+location_id = 8.14 # float | Scope by locations (optional)
+organization_id = 8.14 # float | Scope by organizations (optional)
+search = 'search_example' # str | filter results (optional)
+order = 'order_example' # str | Sort and order by a searchable field, e.g. '<field> DESC' (optional)
+page = 8.14 # float | Page number, starting at 1 (optional)
+per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    location_id = 3.4 # float | Scope by locations (optional)
-    organization_id = 3.4 # float | Scope by organizations (optional)
-    search = 'search_example' # str | filter results (optional)
-    order = 'order_example' # str | Sort and order by a searchable field, e.g. '<field> DESC' (optional)
-    page = 3.4 # float | Page number, starting at 1 (optional)
-    per_page = 'per_page_example' # str | Number of results per page to return, 'all' to return all results (optional)
-
-    try:
-        # List all compute resources
-        api_instance.get_compute_resources(location_id=location_id, organization_id=organization_id, search=search, order=order, page=page, per_page=per_page)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources: %s\n" % e)
+try:
+    # List all compute resources
+    api_instance.get_compute_resources(location_id=location_id, organization_id=organization_id, search=search, order=order, page=page, per_page=per_page)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location_id** | **float**| Scope by locations | [optional] 
- **organization_id** | **float**| Scope by organizations | [optional] 
- **search** | **str**| filter results | [optional] 
- **order** | **str**| Sort and order by a searchable field, e.g. &#39;&lt;field&gt; DESC&#39; | [optional] 
- **page** | **float**| Page number, starting at 1 | [optional] 
- **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional] 
+ **location_id** | **float**| Scope by locations | [optional]
+ **organization_id** | **float**| Scope by organizations | [optional]
+ **search** | **str**| filter results | [optional]
+ **order** | **str**| Sort and order by a searchable field, e.g. &#39;&lt;field&gt; DESC&#39; | [optional]
+ **page** | **float**| Page number, starting at 1 | [optional]
+ **per_page** | **str**| Number of results per page to return, &#39;all&#39; to return all results | [optional]
 
 ### Return type
 
@@ -239,14 +191,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -255,48 +201,36 @@ No authorization required
 
 Show a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Show a compute resource
-        api_instance.get_compute_resources_id(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id: %s\n" % e)
+try:
+    # Show a compute resource
+    api_instance.get_compute_resources_id(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -308,14 +242,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -324,48 +252,36 @@ No authorization required
 
 List available clusters for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available clusters for a compute resource
-        api_instance.get_compute_resources_id_available_clusters(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters: %s\n" % e)
+try:
+    # List available clusters for a compute resource
+    api_instance.get_compute_resources_id_available_clusters(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -377,14 +293,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -393,50 +303,38 @@ No authorization required
 
 List available networks for a compute resource cluster
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+cluster_id = 'cluster_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available networks for a compute resource cluster
-        api_instance.get_compute_resources_id_available_clusters_cluster_id_available_networks(id, cluster_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters_cluster_id_available_networks: %s\n" % e)
+try:
+    # List available networks for a compute resource cluster
+    api_instance.get_compute_resources_id_available_clusters_cluster_id_available_networks(id, cluster_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters_cluster_id_available_networks: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **cluster_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **cluster_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -448,14 +346,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -464,50 +356,38 @@ No authorization required
 
 List resource pools for a compute resource cluster
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+cluster_id = 'cluster_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List resource pools for a compute resource cluster
-        api_instance.get_compute_resources_id_available_clusters_cluster_id_available_resource_pools(id, cluster_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters_cluster_id_available_resource_pools: %s\n" % e)
+try:
+    # List resource pools for a compute resource cluster
+    api_instance.get_compute_resources_id_available_clusters_cluster_id_available_resource_pools(id, cluster_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters_cluster_id_available_resource_pools: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **cluster_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **cluster_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -519,14 +399,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -535,52 +409,40 @@ No authorization required
 
 List storage domains for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+cluster_id = 'cluster_id_example' # str |
+storage_domain = 'storage_domain_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    storage_domain = 'storage_domain_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List storage domains for a compute resource
-        api_instance.get_compute_resources_id_available_clusters_cluster_id_available_storage_domains(id, cluster_id, storage_domain, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters_cluster_id_available_storage_domains: %s\n" % e)
+try:
+    # List storage domains for a compute resource
+    api_instance.get_compute_resources_id_available_clusters_cluster_id_available_storage_domains(id, cluster_id, storage_domain, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters_cluster_id_available_storage_domains: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **cluster_id** | **str**|  | 
- **storage_domain** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **cluster_id** | **str**|  |
+ **storage_domain** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -592,14 +454,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -608,52 +464,40 @@ No authorization required
 
 List storage pods for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+cluster_id = 'cluster_id_example' # str |
+storage_pod = 'storage_pod_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    storage_pod = 'storage_pod_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List storage pods for a compute resource
-        api_instance.get_compute_resources_id_available_clusters_cluster_id_available_storage_pods(id, cluster_id, storage_pod, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters_cluster_id_available_storage_pods: %s\n" % e)
+try:
+    # List storage pods for a compute resource
+    api_instance.get_compute_resources_id_available_clusters_cluster_id_available_storage_pods(id, cluster_id, storage_pod, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_clusters_cluster_id_available_storage_pods: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **cluster_id** | **str**|  | 
- **storage_pod** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **cluster_id** | **str**|  |
+ **storage_pod** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -665,14 +509,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -681,48 +519,36 @@ No authorization required
 
 List available flavors for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available flavors for a compute resource
-        api_instance.get_compute_resources_id_available_flavors(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_flavors: %s\n" % e)
+try:
+    # List available flavors for a compute resource
+    api_instance.get_compute_resources_id_available_flavors(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_flavors: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -734,14 +560,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -750,48 +570,36 @@ No authorization required
 
 List available folders for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available folders for a compute resource
-        api_instance.get_compute_resources_id_available_folders(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_folders: %s\n" % e)
+try:
+    # List available folders for a compute resource
+    api_instance.get_compute_resources_id_available_folders(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_folders: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -803,14 +611,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -819,48 +621,36 @@ No authorization required
 
 List available images for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available images for a compute resource
-        api_instance.get_compute_resources_id_available_images(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_images: %s\n" % e)
+try:
+    # List available images for a compute resource
+    api_instance.get_compute_resources_id_available_images(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_images: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -872,14 +662,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -888,50 +672,38 @@ No authorization required
 
 List available networks for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+cluster_id = 'cluster_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available networks for a compute resource
-        api_instance.get_compute_resources_id_available_networks(id, cluster_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_networks: %s\n" % e)
+try:
+    # List available networks for a compute resource
+    api_instance.get_compute_resources_id_available_networks(id, cluster_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_networks: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **cluster_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **cluster_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -943,14 +715,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -959,48 +725,36 @@ No authorization required
 
 List available security groups for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available security groups for a compute resource
-        api_instance.get_compute_resources_id_available_security_groups(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_security_groups: %s\n" % e)
+try:
+    # List available security groups for a compute resource
+    api_instance.get_compute_resources_id_available_security_groups(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_security_groups: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1012,14 +766,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1028,52 +776,40 @@ No authorization required
 
 List storage domains for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+cluster_id = 'cluster_id_example' # str |
+storage_domain = 'storage_domain_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    storage_domain = 'storage_domain_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List storage domains for a compute resource
-        api_instance.get_compute_resources_id_available_storage_domains(id, cluster_id, storage_domain, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_storage_domains: %s\n" % e)
+try:
+    # List storage domains for a compute resource
+    api_instance.get_compute_resources_id_available_storage_domains(id, cluster_id, storage_domain, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_storage_domains: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **cluster_id** | **str**|  | 
- **storage_domain** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **cluster_id** | **str**|  |
+ **storage_domain** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1085,14 +821,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1101,52 +831,40 @@ No authorization required
 
 List attributes for a given storage domain
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+storage_domain = 'storage_domain_example' # str |
+cluster_id = 'cluster_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    storage_domain = 'storage_domain_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List attributes for a given storage domain
-        api_instance.get_compute_resources_id_available_storage_domains_storage_domain(id, storage_domain, cluster_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_storage_domains_storage_domain: %s\n" % e)
+try:
+    # List attributes for a given storage domain
+    api_instance.get_compute_resources_id_available_storage_domains_storage_domain(id, storage_domain, cluster_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_storage_domains_storage_domain: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **storage_domain** | **str**|  | 
- **cluster_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **storage_domain** | **str**|  |
+ **cluster_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1158,14 +876,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1174,52 +886,40 @@ No authorization required
 
 List storage pods for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+cluster_id = 'cluster_id_example' # str |
+storage_pod = 'storage_pod_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    storage_pod = 'storage_pod_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List storage pods for a compute resource
-        api_instance.get_compute_resources_id_available_storage_pods(id, cluster_id, storage_pod, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_storage_pods: %s\n" % e)
+try:
+    # List storage pods for a compute resource
+    api_instance.get_compute_resources_id_available_storage_pods(id, cluster_id, storage_pod, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_storage_pods: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **cluster_id** | **str**|  | 
- **storage_pod** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **cluster_id** | **str**|  |
+ **storage_pod** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1231,14 +931,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1247,52 +941,40 @@ No authorization required
 
 List attributes for a given storage pod
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+storage_pod = 'storage_pod_example' # str |
+cluster_id = 'cluster_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    storage_pod = 'storage_pod_example' # str | 
-    cluster_id = 'cluster_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List attributes for a given storage pod
-        api_instance.get_compute_resources_id_available_storage_pods_storage_pod(id, storage_pod, cluster_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_storage_pods_storage_pod: %s\n" % e)
+try:
+    # List attributes for a given storage pod
+    api_instance.get_compute_resources_id_available_storage_pods_storage_pod(id, storage_pod, cluster_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_storage_pods_storage_pod: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **storage_pod** | **str**|  | 
- **cluster_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **storage_pod** | **str**|  |
+ **cluster_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1304,14 +986,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1320,48 +996,36 @@ No authorization required
 
 List available virtual machines for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available virtual machines for a compute resource
-        api_instance.get_compute_resources_id_available_virtual_machines(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_virtual_machines: %s\n" % e)
+try:
+    # List available virtual machines for a compute resource
+    api_instance.get_compute_resources_id_available_virtual_machines(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_virtual_machines: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1373,14 +1037,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1389,50 +1047,38 @@ No authorization required
 
 Show a virtual machine
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+vm_id = 'vm_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    vm_id = 'vm_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Show a virtual machine
-        api_instance.get_compute_resources_id_available_virtual_machines_vm_id(id, vm_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_virtual_machines_vm_id: %s\n" % e)
+try:
+    # Show a virtual machine
+    api_instance.get_compute_resources_id_available_virtual_machines_vm_id(id, vm_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_virtual_machines_vm_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **vm_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **vm_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1444,14 +1090,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1460,48 +1100,36 @@ No authorization required
 
 List available vnic profiles for a compute resource, for oVirt only
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available vnic profiles for a compute resource, for oVirt only
-        api_instance.get_compute_resources_id_available_vnic_profiles(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_vnic_profiles: %s\n" % e)
+try:
+    # List available vnic profiles for a compute resource, for oVirt only
+    api_instance.get_compute_resources_id_available_vnic_profiles(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_vnic_profiles: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1513,14 +1141,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1529,48 +1151,36 @@ No authorization required
 
 List available zone for a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List available zone for a compute resource
-        api_instance.get_compute_resources_id_available_zones(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_zones: %s\n" % e)
+try:
+    # List available zone for a compute resource
+    api_instance.get_compute_resources_id_available_zones(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_available_zones: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1582,14 +1192,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1598,50 +1202,38 @@ No authorization required
 
 List attributes for a given storage domain
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+storage_domain_id = 'storage_domain_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    storage_domain_id = 'storage_domain_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List attributes for a given storage domain
-        api_instance.get_compute_resources_id_storage_domains_storage_domain_id(id, storage_domain_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_storage_domains_storage_domain_id: %s\n" % e)
+try:
+    # List attributes for a given storage domain
+    api_instance.get_compute_resources_id_storage_domains_storage_domain_id(id, storage_domain_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_storage_domains_storage_domain_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **storage_domain_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **storage_domain_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1653,14 +1245,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1669,50 +1255,38 @@ No authorization required
 
 List attributes for a given storage pod
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+storage_pod_id = 'storage_pod_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    storage_pod_id = 'storage_pod_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # List attributes for a given storage pod
-        api_instance.get_compute_resources_id_storage_pods_storage_pod_id(id, storage_pod_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->get_compute_resources_id_storage_pods_storage_pod_id: %s\n" % e)
+try:
+    # List attributes for a given storage pod
+    api_instance.get_compute_resources_id_storage_pods_storage_pod_id(id, storage_pod_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->get_compute_resources_id_storage_pods_storage_pod_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **storage_pod_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **storage_pod_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -1724,14 +1298,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1740,88 +1308,76 @@ No authorization required
 
 Create a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+compute_resource_name = 'compute_resource_name_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+compute_resource_provider = 'compute_resource_provider_example' # str | Providers include  (optional)
+compute_resource_url = 'compute_resource_url_example' # str | URL for Libvirt, oVirt and OpenStack (optional)
+compute_resource_description = 'compute_resource_description_example' # str |  (optional)
+compute_resource_user = 'compute_resource_user_example' # str | Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2. (optional)
+compute_resource_password = 'compute_resource_password_example' # str | Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2 (optional)
+compute_resource_datacenter = 'compute_resource_datacenter_example' # str | for oVirt, VMware Datacenter (optional)
+compute_resource_ovirt_quota = 'compute_resource_ovirt_quota_example' # str | for oVirt only, ID or Name of quota to use (optional)
+compute_resource_public_key = 'compute_resource_public_key_example' # str | for oVirt only (optional)
+compute_resource_region = 'compute_resource_region_example' # str | for AzureRm eg. 'eastus' and for EC2 only. Use 'us-gov-west-1' for EC2 GovCloud region (optional)
+compute_resource_tenant = 'compute_resource_tenant_example' # str | for OpenStack and AzureRm only (optional)
+compute_resource_domain = 'compute_resource_domain_example' # str | for OpenStack (v3) only (optional)
+compute_resource_project_domain_name = 'compute_resource_project_domain_name_example' # str | for OpenStack (v3) only (optional)
+compute_resource_project_domain_id = 'compute_resource_project_domain_id_example' # str | for OpenStack (v3) only (optional)
+compute_resource_server = 'compute_resource_server_example' # str | for VMware (optional)
+compute_resource_set_console_password = true # bool | for Libvirt and VMware only (optional)
+compute_resource_display_type = 'compute_resource_display_type_example' # str | for Libvirt and oVirt only (optional)
+compute_resource_keyboard_layout = 'compute_resource_keyboard_layout_example' # str | for oVirt only (optional)
+compute_resource_caching_enabled = true # bool | enable caching, for VMware only (optional)
+compute_resource_location_ids = ['compute_resource_location_ids_example'] # list[str] | REPLACE locations with given ids (optional)
+compute_resource_organization_ids = ['compute_resource_organization_ids_example'] # list[str] | REPLACE organizations with given ids. (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    compute_resource_name = 'compute_resource_name_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    compute_resource_provider = 'compute_resource_provider_example' # str | Providers include  (optional)
-    compute_resource_url = 'compute_resource_url_example' # str | URL for Libvirt, oVirt and OpenStack (optional)
-    compute_resource_description = 'compute_resource_description_example' # str |  (optional)
-    compute_resource_user = 'compute_resource_user_example' # str | Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2. (optional)
-    compute_resource_password = 'compute_resource_password_example' # str | Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2 (optional)
-    compute_resource_datacenter = 'compute_resource_datacenter_example' # str | for oVirt, VMware Datacenter (optional)
-    compute_resource_ovirt_quota = 'compute_resource_ovirt_quota_example' # str | for oVirt only, ID or Name of quota to use (optional)
-    compute_resource_public_key = 'compute_resource_public_key_example' # str | for oVirt only (optional)
-    compute_resource_region = 'compute_resource_region_example' # str | for AzureRm eg. 'eastus' and for EC2 only. Use 'us-gov-west-1' for EC2 GovCloud region (optional)
-    compute_resource_tenant = 'compute_resource_tenant_example' # str | for OpenStack and AzureRm only (optional)
-    compute_resource_domain = 'compute_resource_domain_example' # str | for OpenStack (v3) only (optional)
-    compute_resource_project_domain_name = 'compute_resource_project_domain_name_example' # str | for OpenStack (v3) only (optional)
-    compute_resource_project_domain_id = 'compute_resource_project_domain_id_example' # str | for OpenStack (v3) only (optional)
-    compute_resource_server = 'compute_resource_server_example' # str | for VMware (optional)
-    compute_resource_set_console_password = True # bool | for Libvirt and VMware only (optional)
-    compute_resource_display_type = 'compute_resource_display_type_example' # str | for Libvirt and oVirt only (optional)
-    compute_resource_keyboard_layout = 'compute_resource_keyboard_layout_example' # str | for oVirt only (optional)
-    compute_resource_caching_enabled = True # bool | enable caching, for VMware only (optional)
-    compute_resource_location_ids = ['compute_resource_location_ids_example'] # List[str] | REPLACE locations with given ids (optional)
-    compute_resource_organization_ids = ['compute_resource_organization_ids_example'] # List[str] | REPLACE organizations with given ids. (optional)
-
-    try:
-        # Create a compute resource
-        api_instance.post_compute_resources(compute_resource_name, location_id=location_id, organization_id=organization_id, compute_resource_provider=compute_resource_provider, compute_resource_url=compute_resource_url, compute_resource_description=compute_resource_description, compute_resource_user=compute_resource_user, compute_resource_password=compute_resource_password, compute_resource_datacenter=compute_resource_datacenter, compute_resource_ovirt_quota=compute_resource_ovirt_quota, compute_resource_public_key=compute_resource_public_key, compute_resource_region=compute_resource_region, compute_resource_tenant=compute_resource_tenant, compute_resource_domain=compute_resource_domain, compute_resource_project_domain_name=compute_resource_project_domain_name, compute_resource_project_domain_id=compute_resource_project_domain_id, compute_resource_server=compute_resource_server, compute_resource_set_console_password=compute_resource_set_console_password, compute_resource_display_type=compute_resource_display_type, compute_resource_keyboard_layout=compute_resource_keyboard_layout, compute_resource_caching_enabled=compute_resource_caching_enabled, compute_resource_location_ids=compute_resource_location_ids, compute_resource_organization_ids=compute_resource_organization_ids)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->post_compute_resources: %s\n" % e)
+try:
+    # Create a compute resource
+    api_instance.post_compute_resources(compute_resource_name, location_id=location_id, organization_id=organization_id, compute_resource_provider=compute_resource_provider, compute_resource_url=compute_resource_url, compute_resource_description=compute_resource_description, compute_resource_user=compute_resource_user, compute_resource_password=compute_resource_password, compute_resource_datacenter=compute_resource_datacenter, compute_resource_ovirt_quota=compute_resource_ovirt_quota, compute_resource_public_key=compute_resource_public_key, compute_resource_region=compute_resource_region, compute_resource_tenant=compute_resource_tenant, compute_resource_domain=compute_resource_domain, compute_resource_project_domain_name=compute_resource_project_domain_name, compute_resource_project_domain_id=compute_resource_project_domain_id, compute_resource_server=compute_resource_server, compute_resource_set_console_password=compute_resource_set_console_password, compute_resource_display_type=compute_resource_display_type, compute_resource_keyboard_layout=compute_resource_keyboard_layout, compute_resource_caching_enabled=compute_resource_caching_enabled, compute_resource_location_ids=compute_resource_location_ids, compute_resource_organization_ids=compute_resource_organization_ids)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->post_compute_resources: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **compute_resource_name** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **compute_resource_provider** | **str**| Providers include  | [optional] 
- **compute_resource_url** | **str**| URL for Libvirt, oVirt and OpenStack | [optional] 
- **compute_resource_description** | **str**|  | [optional] 
- **compute_resource_user** | **str**| Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2. | [optional] 
- **compute_resource_password** | **str**| Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2 | [optional] 
- **compute_resource_datacenter** | **str**| for oVirt, VMware Datacenter | [optional] 
- **compute_resource_ovirt_quota** | **str**| for oVirt only, ID or Name of quota to use | [optional] 
- **compute_resource_public_key** | **str**| for oVirt only | [optional] 
- **compute_resource_region** | **str**| for AzureRm eg. &#39;eastus&#39; and for EC2 only. Use &#39;us-gov-west-1&#39; for EC2 GovCloud region | [optional] 
- **compute_resource_tenant** | **str**| for OpenStack and AzureRm only | [optional] 
- **compute_resource_domain** | **str**| for OpenStack (v3) only | [optional] 
- **compute_resource_project_domain_name** | **str**| for OpenStack (v3) only | [optional] 
- **compute_resource_project_domain_id** | **str**| for OpenStack (v3) only | [optional] 
- **compute_resource_server** | **str**| for VMware | [optional] 
- **compute_resource_set_console_password** | **bool**| for Libvirt and VMware only | [optional] 
- **compute_resource_display_type** | **str**| for Libvirt and oVirt only | [optional] 
- **compute_resource_keyboard_layout** | **str**| for oVirt only | [optional] 
- **compute_resource_caching_enabled** | **bool**| enable caching, for VMware only | [optional] 
- **compute_resource_location_ids** | [**List[str]**](str.md)| REPLACE locations with given ids | [optional] 
- **compute_resource_organization_ids** | [**List[str]**](str.md)| REPLACE organizations with given ids. | [optional] 
+ **compute_resource_name** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **compute_resource_provider** | **str**| Providers include  | [optional]
+ **compute_resource_url** | **str**| URL for Libvirt, oVirt and OpenStack | [optional]
+ **compute_resource_description** | **str**|  | [optional]
+ **compute_resource_user** | **str**| Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2. | [optional]
+ **compute_resource_password** | **str**| Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2 | [optional]
+ **compute_resource_datacenter** | **str**| for oVirt, VMware Datacenter | [optional]
+ **compute_resource_ovirt_quota** | **str**| for oVirt only, ID or Name of quota to use | [optional]
+ **compute_resource_public_key** | **str**| for oVirt only | [optional]
+ **compute_resource_region** | **str**| for AzureRm eg. &#39;eastus&#39; and for EC2 only. Use &#39;us-gov-west-1&#39; for EC2 GovCloud region | [optional]
+ **compute_resource_tenant** | **str**| for OpenStack and AzureRm only | [optional]
+ **compute_resource_domain** | **str**| for OpenStack (v3) only | [optional]
+ **compute_resource_project_domain_name** | **str**| for OpenStack (v3) only | [optional]
+ **compute_resource_project_domain_id** | **str**| for OpenStack (v3) only | [optional]
+ **compute_resource_server** | **str**| for VMware | [optional]
+ **compute_resource_set_console_password** | **bool**| for Libvirt and VMware only | [optional]
+ **compute_resource_display_type** | **str**| for Libvirt and oVirt only | [optional]
+ **compute_resource_keyboard_layout** | **str**| for oVirt only | [optional]
+ **compute_resource_caching_enabled** | **bool**| enable caching, for VMware only | [optional]
+ **compute_resource_location_ids** | [**list[str]**](str.md)| REPLACE locations with given ids | [optional]
+ **compute_resource_organization_ids** | [**list[str]**](str.md)| REPLACE organizations with given ids. | [optional]
 
 ### Return type
 
@@ -1835,12 +1391,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1849,90 +1399,78 @@ No authorization required
 
 Update a compute resource
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
+compute_resource_name = 'compute_resource_name_example' # str |  (optional)
+compute_resource_provider = 'compute_resource_provider_example' # str | Providers include  (optional)
+compute_resource_url = 'compute_resource_url_example' # str | URL for Libvirt, oVirt and OpenStack (optional)
+compute_resource_description = 'compute_resource_description_example' # str |  (optional)
+compute_resource_user = 'compute_resource_user_example' # str | Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2. (optional)
+compute_resource_password = 'compute_resource_password_example' # str | Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2 (optional)
+compute_resource_datacenter = 'compute_resource_datacenter_example' # str | for oVirt, VMware Datacenter (optional)
+compute_resource_ovirt_quota = 'compute_resource_ovirt_quota_example' # str | for oVirt only, ID or Name of quota to use (optional)
+compute_resource_public_key = 'compute_resource_public_key_example' # str | for oVirt only (optional)
+compute_resource_region = 'compute_resource_region_example' # str | for AzureRm eg. 'eastus' and for EC2 only. Use 'us-gov-west-1' for EC2 GovCloud region (optional)
+compute_resource_tenant = 'compute_resource_tenant_example' # str | for OpenStack and AzureRm only (optional)
+compute_resource_domain = 'compute_resource_domain_example' # str | for OpenStack (v3) only (optional)
+compute_resource_project_domain_name = 'compute_resource_project_domain_name_example' # str | for OpenStack (v3) only (optional)
+compute_resource_project_domain_id = 'compute_resource_project_domain_id_example' # str | for OpenStack (v3) only (optional)
+compute_resource_server = 'compute_resource_server_example' # str | for VMware (optional)
+compute_resource_set_console_password = true # bool | for Libvirt and VMware only (optional)
+compute_resource_display_type = 'compute_resource_display_type_example' # str | for Libvirt and oVirt only (optional)
+compute_resource_keyboard_layout = 'compute_resource_keyboard_layout_example' # str | for oVirt only (optional)
+compute_resource_caching_enabled = true # bool | enable caching, for VMware only (optional)
+compute_resource_location_ids = ['compute_resource_location_ids_example'] # list[str] | REPLACE locations with given ids (optional)
+compute_resource_organization_ids = ['compute_resource_organization_ids_example'] # list[str] | REPLACE organizations with given ids. (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-    compute_resource_name = 'compute_resource_name_example' # str |  (optional)
-    compute_resource_provider = 'compute_resource_provider_example' # str | Providers include  (optional)
-    compute_resource_url = 'compute_resource_url_example' # str | URL for Libvirt, oVirt and OpenStack (optional)
-    compute_resource_description = 'compute_resource_description_example' # str |  (optional)
-    compute_resource_user = 'compute_resource_user_example' # str | Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2. (optional)
-    compute_resource_password = 'compute_resource_password_example' # str | Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2 (optional)
-    compute_resource_datacenter = 'compute_resource_datacenter_example' # str | for oVirt, VMware Datacenter (optional)
-    compute_resource_ovirt_quota = 'compute_resource_ovirt_quota_example' # str | for oVirt only, ID or Name of quota to use (optional)
-    compute_resource_public_key = 'compute_resource_public_key_example' # str | for oVirt only (optional)
-    compute_resource_region = 'compute_resource_region_example' # str | for AzureRm eg. 'eastus' and for EC2 only. Use 'us-gov-west-1' for EC2 GovCloud region (optional)
-    compute_resource_tenant = 'compute_resource_tenant_example' # str | for OpenStack and AzureRm only (optional)
-    compute_resource_domain = 'compute_resource_domain_example' # str | for OpenStack (v3) only (optional)
-    compute_resource_project_domain_name = 'compute_resource_project_domain_name_example' # str | for OpenStack (v3) only (optional)
-    compute_resource_project_domain_id = 'compute_resource_project_domain_id_example' # str | for OpenStack (v3) only (optional)
-    compute_resource_server = 'compute_resource_server_example' # str | for VMware (optional)
-    compute_resource_set_console_password = True # bool | for Libvirt and VMware only (optional)
-    compute_resource_display_type = 'compute_resource_display_type_example' # str | for Libvirt and oVirt only (optional)
-    compute_resource_keyboard_layout = 'compute_resource_keyboard_layout_example' # str | for oVirt only (optional)
-    compute_resource_caching_enabled = True # bool | enable caching, for VMware only (optional)
-    compute_resource_location_ids = ['compute_resource_location_ids_example'] # List[str] | REPLACE locations with given ids (optional)
-    compute_resource_organization_ids = ['compute_resource_organization_ids_example'] # List[str] | REPLACE organizations with given ids. (optional)
-
-    try:
-        # Update a compute resource
-        api_instance.put_compute_resources_id(id, location_id=location_id, organization_id=organization_id, compute_resource_name=compute_resource_name, compute_resource_provider=compute_resource_provider, compute_resource_url=compute_resource_url, compute_resource_description=compute_resource_description, compute_resource_user=compute_resource_user, compute_resource_password=compute_resource_password, compute_resource_datacenter=compute_resource_datacenter, compute_resource_ovirt_quota=compute_resource_ovirt_quota, compute_resource_public_key=compute_resource_public_key, compute_resource_region=compute_resource_region, compute_resource_tenant=compute_resource_tenant, compute_resource_domain=compute_resource_domain, compute_resource_project_domain_name=compute_resource_project_domain_name, compute_resource_project_domain_id=compute_resource_project_domain_id, compute_resource_server=compute_resource_server, compute_resource_set_console_password=compute_resource_set_console_password, compute_resource_display_type=compute_resource_display_type, compute_resource_keyboard_layout=compute_resource_keyboard_layout, compute_resource_caching_enabled=compute_resource_caching_enabled, compute_resource_location_ids=compute_resource_location_ids, compute_resource_organization_ids=compute_resource_organization_ids)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->put_compute_resources_id: %s\n" % e)
+try:
+    # Update a compute resource
+    api_instance.put_compute_resources_id(id, location_id=location_id, organization_id=organization_id, compute_resource_name=compute_resource_name, compute_resource_provider=compute_resource_provider, compute_resource_url=compute_resource_url, compute_resource_description=compute_resource_description, compute_resource_user=compute_resource_user, compute_resource_password=compute_resource_password, compute_resource_datacenter=compute_resource_datacenter, compute_resource_ovirt_quota=compute_resource_ovirt_quota, compute_resource_public_key=compute_resource_public_key, compute_resource_region=compute_resource_region, compute_resource_tenant=compute_resource_tenant, compute_resource_domain=compute_resource_domain, compute_resource_project_domain_name=compute_resource_project_domain_name, compute_resource_project_domain_id=compute_resource_project_domain_id, compute_resource_server=compute_resource_server, compute_resource_set_console_password=compute_resource_set_console_password, compute_resource_display_type=compute_resource_display_type, compute_resource_keyboard_layout=compute_resource_keyboard_layout, compute_resource_caching_enabled=compute_resource_caching_enabled, compute_resource_location_ids=compute_resource_location_ids, compute_resource_organization_ids=compute_resource_organization_ids)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->put_compute_resources_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
- **compute_resource_name** | **str**|  | [optional] 
- **compute_resource_provider** | **str**| Providers include  | [optional] 
- **compute_resource_url** | **str**| URL for Libvirt, oVirt and OpenStack | [optional] 
- **compute_resource_description** | **str**|  | [optional] 
- **compute_resource_user** | **str**| Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2. | [optional] 
- **compute_resource_password** | **str**| Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2 | [optional] 
- **compute_resource_datacenter** | **str**| for oVirt, VMware Datacenter | [optional] 
- **compute_resource_ovirt_quota** | **str**| for oVirt only, ID or Name of quota to use | [optional] 
- **compute_resource_public_key** | **str**| for oVirt only | [optional] 
- **compute_resource_region** | **str**| for AzureRm eg. &#39;eastus&#39; and for EC2 only. Use &#39;us-gov-west-1&#39; for EC2 GovCloud region | [optional] 
- **compute_resource_tenant** | **str**| for OpenStack and AzureRm only | [optional] 
- **compute_resource_domain** | **str**| for OpenStack (v3) only | [optional] 
- **compute_resource_project_domain_name** | **str**| for OpenStack (v3) only | [optional] 
- **compute_resource_project_domain_id** | **str**| for OpenStack (v3) only | [optional] 
- **compute_resource_server** | **str**| for VMware | [optional] 
- **compute_resource_set_console_password** | **bool**| for Libvirt and VMware only | [optional] 
- **compute_resource_display_type** | **str**| for Libvirt and oVirt only | [optional] 
- **compute_resource_keyboard_layout** | **str**| for oVirt only | [optional] 
- **compute_resource_caching_enabled** | **bool**| enable caching, for VMware only | [optional] 
- **compute_resource_location_ids** | [**List[str]**](str.md)| REPLACE locations with given ids | [optional] 
- **compute_resource_organization_ids** | [**List[str]**](str.md)| REPLACE organizations with given ids. | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
+ **compute_resource_name** | **str**|  | [optional]
+ **compute_resource_provider** | **str**| Providers include  | [optional]
+ **compute_resource_url** | **str**| URL for Libvirt, oVirt and OpenStack | [optional]
+ **compute_resource_description** | **str**|  | [optional]
+ **compute_resource_user** | **str**| Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2. | [optional]
+ **compute_resource_password** | **str**| Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2 | [optional]
+ **compute_resource_datacenter** | **str**| for oVirt, VMware Datacenter | [optional]
+ **compute_resource_ovirt_quota** | **str**| for oVirt only, ID or Name of quota to use | [optional]
+ **compute_resource_public_key** | **str**| for oVirt only | [optional]
+ **compute_resource_region** | **str**| for AzureRm eg. &#39;eastus&#39; and for EC2 only. Use &#39;us-gov-west-1&#39; for EC2 GovCloud region | [optional]
+ **compute_resource_tenant** | **str**| for OpenStack and AzureRm only | [optional]
+ **compute_resource_domain** | **str**| for OpenStack (v3) only | [optional]
+ **compute_resource_project_domain_name** | **str**| for OpenStack (v3) only | [optional]
+ **compute_resource_project_domain_id** | **str**| for OpenStack (v3) only | [optional]
+ **compute_resource_server** | **str**| for VMware | [optional]
+ **compute_resource_set_console_password** | **bool**| for Libvirt and VMware only | [optional]
+ **compute_resource_display_type** | **str**| for Libvirt and oVirt only | [optional]
+ **compute_resource_keyboard_layout** | **str**| for oVirt only | [optional]
+ **compute_resource_caching_enabled** | **bool**| enable caching, for VMware only | [optional]
+ **compute_resource_location_ids** | [**list[str]**](str.md)| REPLACE locations with given ids | [optional]
+ **compute_resource_organization_ids** | [**list[str]**](str.md)| REPLACE organizations with given ids. | [optional]
 
 ### Return type
 
@@ -1946,12 +1484,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1960,50 +1492,38 @@ No authorization required
 
 Associate VMs to Hosts
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+vm_id = 'vm_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    vm_id = 'vm_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Associate VMs to Hosts
-        api_instance.put_compute_resources_id_associate_vm_id(id, vm_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->put_compute_resources_id_associate_vm_id: %s\n" % e)
+try:
+    # Associate VMs to Hosts
+    api_instance.put_compute_resources_id_associate_vm_id(id, vm_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->put_compute_resources_id_associate_vm_id: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **vm_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **vm_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -2017,12 +1537,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2031,50 +1545,38 @@ No authorization required
 
 Power a Virtual Machine
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+vm_id = 'vm_id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    vm_id = 'vm_id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Power a Virtual Machine
-        api_instance.put_compute_resources_id_available_virtual_machines_vm_id_power(id, vm_id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->put_compute_resources_id_available_virtual_machines_vm_id_power: %s\n" % e)
+try:
+    # Power a Virtual Machine
+    api_instance.put_compute_resources_id_available_virtual_machines_vm_id_power(id, vm_id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->put_compute_resources_id_available_virtual_machines_vm_id_power: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **vm_id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **vm_id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -2088,12 +1590,6 @@ No authorization required
 
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2102,48 +1598,36 @@ No authorization required
 
 Refresh Compute Resource Cache
 
+
+
 ### Example
-
-
 ```python
+from __future__ import print_function
 import time
-import os
-import foreman
-from foreman.rest import ApiException
+import pyforeman
+from pyforeman.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://localhost:3000/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = foreman.Configuration(
-    host = "https://localhost:3000/api"
-)
+# create an instance of the API class
+api_instance = pyforeman.ComputeResourcesApi()
+id = 'id_example' # str |
+location_id = 8.14 # float | Set the current location context for the request (optional)
+organization_id = 8.14 # float | Set the current organization context for the request (optional)
 
-
-# Enter a context with an instance of the API client
-with foreman.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = foreman.ComputeResourcesApi(api_client)
-    id = 'id_example' # str | 
-    location_id = 3.4 # float | Set the current location context for the request (optional)
-    organization_id = 3.4 # float | Set the current organization context for the request (optional)
-
-    try:
-        # Refresh Compute Resource Cache
-        api_instance.put_compute_resources_id_refresh_cache(id, location_id=location_id, organization_id=organization_id)
-    except Exception as e:
-        print("Exception when calling ComputeResourcesApi->put_compute_resources_id_refresh_cache: %s\n" % e)
+try:
+    # Refresh Compute Resource Cache
+    api_instance.put_compute_resources_id_refresh_cache(id, location_id=location_id, organization_id=organization_id)
+except ApiException as e:
+    print("Exception when calling ComputeResourcesApi->put_compute_resources_id_refresh_cache: %s\n" % e)
 ```
-
-
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **location_id** | **float**| Set the current location context for the request | [optional] 
- **organization_id** | **float**| Set the current organization context for the request | [optional] 
+ **id** | **str**|  |
+ **location_id** | **float**| Set the current location context for the request | [optional]
+ **organization_id** | **float**| Set the current organization context for the request | [optional]
 
 ### Return type
 
@@ -2158,11 +1642,4 @@ No authorization required
  - **Content-Type**: application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ok |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
